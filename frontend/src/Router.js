@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 
 // pages
-import Register from "./Test";
-import Login from './App';
+import RegisterPage from "./pages/RegisterPage.js";
+import Login from './App.js';
 
 
 class Router extends Component {
@@ -11,7 +11,7 @@ class Router extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/register" component={Register}/>
+          <Route exact path="/register" component={RegisterPage}/>
           <Route path="/" component={Login}/>
         </Switch>
       </BrowserRouter>

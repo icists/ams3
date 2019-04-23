@@ -3,22 +3,15 @@ import './App.css';
 
 import Title from "./components/Title.js";
 
-import Register from "./containers/Register.js";
+import MainPage from "./pages/MainPage.js";
 import Application from "./containers/Application.js";
 
-import backgroundImage from "./assets/background.jpg"
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       titleText: "ICISTS Application",
-      signedIn: false,
-      background: `url(${backgroundImage})`,
-
-      colors: {
-        icistsBlue: '#09073B',
-      }
     }
   }
 
@@ -29,7 +22,7 @@ class App extends React.Component {
           <Title titleText={this.state.titleText}/>
         </div>
         <div className="App-Register">
-          <Register color={this.state.colors.icistsBlue}/>
+          <MainPage/>
         </div>
       </div>
     );
