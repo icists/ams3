@@ -12,8 +12,9 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      titleText: "ICISTS Applicatoin",
+      titleText: "ICISTS Application",
       signedIn: false,
+      background: `url(${backgroundImage})`,
 
       colors: {
         icistsBlue: '#09073B',
@@ -30,7 +31,6 @@ class App extends React.Component {
         <div className="App-Register">
           <Register color={this.state.colors.icistsBlue}/>
         </div>
-        <Application/>
       </div>
     );
   }
