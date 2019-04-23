@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button, Form, Grid, Header, Image, Message, Segment, GridColumn } from "semantic-ui-react";
 
 class SignUp extends React.Component {
@@ -10,8 +11,8 @@ class SignUp extends React.Component {
         return (
         <Grid textAlign="center">
             <Grid.Column style={{ maxWidth: 450 }}>
-                <Message >
-                    Not registerd yet? <a href='#'>Sign Up</a>
+                <Message>
+                    Not registerd yet? <Link to='/register'>Sign Up</Link>
                 </Message>
             </Grid.Column>
         </Grid>
