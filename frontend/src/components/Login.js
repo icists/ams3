@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, Form, Grid, Header, Image, Message, Segment } from "semantic-ui-react";
+import Google from "./Google";
+import Facebook from "./Facebook";
 
 import Logo from "../assets/logo_black.png"
 
@@ -41,6 +43,8 @@ const Login = (props) => (
           </Form>
         </Grid.Column>
       </Grid>
+      <Google />
+      <Facebook />
     </div>
   )
   
