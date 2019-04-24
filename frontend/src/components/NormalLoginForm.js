@@ -1,11 +1,9 @@
 import React from "react";
 import { Button, Form, Grid, Header, Image, Message, Segment } from "semantic-ui-react";
-import Google from "./Google";
-import Facebook from "./Facebook";
 
 import Logo from "../assets/logo_black.png"
 
-const Login = (props) => (
+const NormalLoginForm = (props) => (
     <div className='login-form'>
       {/*
         Heads up! The styles below are necessary for the correct render of this example.
@@ -43,9 +41,7 @@ const Login = (props) => (
           </Form>
         </Grid.Column>
       </Grid>
-      <Google />
-      <Facebook />
     </div>
   )
   
-export default Login;
+export default NormalLoginForm;

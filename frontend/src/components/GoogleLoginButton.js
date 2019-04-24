@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
-import {GoogleLogin} from "react-google-login"
+import { GoogleLogin } from "react-google-login"
 
 require("dotenv").config();
 
-class Google extends React.Component {
+class GoogleLoginButton extends React.Component {
     constructor() {
         super();
     }
@@ -18,13 +18,15 @@ class Google extends React.Component {
         return (
             <GoogleLogin
                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                buttonText="LOGIN WITH GOOGLE"
-                onSuccess={this.loginHandler}
-                onFailure={this.loginHandler}
+                onSuccess={this.props.handler}
+                onFailure={this.props.handler}
                 cookiePolicy={'single_host_origin'}
+                icon = {false}
+                buttonText = "Sign in with google"
+                className="GoogleBtn"
             />
         );
     }
 }
 
-export default Google;
+export default GoogleLoginButton;
