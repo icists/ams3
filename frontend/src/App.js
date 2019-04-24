@@ -4,7 +4,6 @@ import './App.css';
 import Title from "./components/Title.js";
 
 import MainPage from "./pages/MainPage.js";
-import Application from "./containers/Application.js";
 
 
 class App extends React.Component {

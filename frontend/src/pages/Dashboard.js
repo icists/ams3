@@ -1,5 +1,8 @@
 import React from "react";
 
+import PersonalInformation from "../containers/PersonalInformation";
+import PaymentInformation from "../containers/PaymentInformation";
+
 class Dashboard extends React.Component {
     constructor() {
         super();
@@ -8,8 +11,11 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                This is an awesome dashboard
+                <PersonalInformation />
+                <PaymentInformation />
             </div>
         );
     }
 }
+
+export default Dashboard;
