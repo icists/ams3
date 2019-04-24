@@ -1,4 +1,9 @@
 import React from "react";
+
+import Router from "../Router.js"
+
+import { Route } from "react-router-dom";
+
 import { Form, Input, TextArea, Button, Select, Dropdown } from 'semantic-ui-react'
 import { Grid } from 'semantic-ui-react';
 import { Divider } from 'semantic-ui-react';
@@ -10,6 +15,7 @@ class RegisterInterface extends React.Component {
     constructor() {
         super();
         this.state = {
+            schoolOptions: SCHOOL_OPTIONS,
             nationalityOptions: COUNTRY_OPTIONS,
             genderOptions: [
                 {
@@ -61,7 +67,7 @@ class RegisterInterface extends React.Component {
     render() {
         return (
             <Grid textAlign="center">
-                <Grid.Column width={10}>
+                <Grid.Column width={12}>
                     <Form>
                         <Divider horizontal>Creat an Account</Divider>
                         <Form.Input fluid label="Email Address" placeholder="Email Address"/>
@@ -107,7 +113,10 @@ class RegisterInterface extends React.Component {
                                 scrolling="false"
                                 options={this.state.channelOptions}/>
                         </Form.Group>
-                        <Form.Button>Submit</Form.Button>
+                        <Form.Group inline>
+                            <Form.Button color="red">Cancel</Form.Button>
+                            <Form.Button color="green">Submit</Form.Button>
+                        </Form.Group>
                     </Form>
                 </Grid.Column>
             </Grid>
