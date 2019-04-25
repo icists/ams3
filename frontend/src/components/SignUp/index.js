@@ -36,16 +36,17 @@ class SignUpFormBase extends React.Component {
           .then(authUser => {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push(ROUTES.HOME);
+            alert(authUser);
           })
           .catch(error => {
+            alert(error.message);
             this.setState({ error });
           });
-    
+        
         event.preventDefault();
-        console.log("Signed In!");
     }
 
-    onChange = event => {
+    onChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         });
