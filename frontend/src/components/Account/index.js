@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Header } from "semantic-ui-react";
+
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { withAuthorization, AuthUserContext } from '../Session';
@@ -8,10 +10,12 @@ const AccountPage = () => (
     <AuthUserContext.Consumer>
         {authUser => (
             <div>
-                <h1>Account Page</h1>
-                <h2>
+                <Header as="h1">
+                    Account Page
+                </Header>
+                <Header as="h2">
                     Account: { authUser.email }
-                </h2>
+                </Header>
                 <PasswordForgetForm />
                 <PasswordChangeForm />
             </div>

@@ -20,7 +20,7 @@ const App = () => (
         <Router>
             <Navigation />
 
-            <Divider>WELCOME TO ICISTS 2019</Divider>
+            <Divider horizontal>WELCOME TO ICISTS 2019</Divider>
 
             <Route exact path={ROUTES.LANDING} component={LandingPage} />
             <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
