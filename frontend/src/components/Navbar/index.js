@@ -35,7 +35,8 @@ class Navigation extends Component {
   }
   render() {
     return(
-  <div>
+  <div className="row">
+  <div className="col-12">
   <Navbar color="light" light expand="md">
     <NavbarBrand href="/">
     <img src={logo} height="30" alt="icists logo"/>
@@ -48,6 +49,7 @@ class Navigation extends Component {
         </AuthUserContext.Consumer>
     </Collapse>
   </Navbar>
+  </div>
   </div>
     )
   }

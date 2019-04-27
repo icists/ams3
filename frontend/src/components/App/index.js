@@ -15,7 +15,7 @@ import { withAuthentication } from "../Session"
 
 const App = () => (
         <BrowserRouter>
-            <div className="container">
+            <div className="container-fluid">
                 <Navbar />
                 <Switch>
                 <Route exact path={ROUTES.HOME} component={Home} />
