@@ -26,6 +26,9 @@ const NavigationForAuth = () => (
         <Link to={ROUTES.HOME}>Home</Link>
       </Menu.Item>
       <Menu.Item>
+        <Link to={ROUTES.APPLICATION}>Application</Link>
+      </Menu.Item>
+      <Menu.Item>
         <Link to={ROUTES.ACCOUNT}>Account</Link>
       </Menu.Item>
       <Menu.Item>
