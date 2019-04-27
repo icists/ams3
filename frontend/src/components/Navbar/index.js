@@ -69,30 +69,12 @@ const NavigationForAuth = () => (
         <NavItem>
             <SignOutButton />
         </NavItem>
-
-        {/* <UncontrolledDropdown nav inNavbar>
-            <DropdownToggle nav caret>
-            Options
-            </DropdownToggle>
-            <DropdownMenu right>
-            <DropdownItem>
-                Option 1
-            </DropdownItem>
-            <DropdownItem>
-                Option 2
-            </DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>
-                Reset
-            </DropdownItem>
-            </DropdownMenu>
-        </UncontrolledDropdown> */}
         </Nav>
   </div>
 );
 
 const NavigationForNonAuth = () => (
-    <div className="navbar collapse navbar-collapse">
+    <div className="navbar">
         <Nav className="ml-auto" navbar>
             <NavItem>
                 <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
