@@ -35,7 +35,8 @@ class Navigation extends Component {
   }
   render() {
     return(
-    <Navbar color="light" light expand="md">
+      <div>
+    <Navbar light expand="md">
       <NavbarBrand href="/">
       <img src={logo} height="30" alt="icists logo"/>
       </NavbarBrand>
@@ -47,6 +48,8 @@ class Navigation extends Component {
           </AuthUserContext.Consumer>
       </Collapse>
     </Navbar>
+      </div>
+
     )
   }
 }
@@ -92,7 +95,7 @@ const NavigationForAuth = () => (
 );
 
 const NavigationForNonAuth = () => (
-    <div style={{float:'right'}}>
+    <div className="navbar collapse navbar-collapse">
         <Nav className="ml-auto" navbar>
             <NavItem>
                 <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
@@ -102,27 +105,8 @@ const NavigationForNonAuth = () => (
             </NavItem>
             <NavItem>
                 <Link className="nav-link" to={ROUTES.SIGN_UP}>Sign Up</Link>
-                
             </NavItem>
-        {/* <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret>
-            Options
-          </DropdownToggle>
-          <DropdownMenu right>
-            <DropdownItem>
-              Option 1
-            </DropdownItem>
-            <DropdownItem>
-              Option 2
-            </DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>
-              Reset
-            </DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown> */}
         </Nav>
-  
     </div>
 )
 

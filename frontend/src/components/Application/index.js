@@ -351,9 +351,12 @@ class ApplicationBase extends React.Component {
                 </div>
                 <hr/>
                 <div className="app-payment">
+                    <h3>
+                        Payment
+                    </h3>
                     <div className="row">
                         <div className="col-md-3">
-                            Your payment is verified
+                            <p>Your payment is {this.state.paymentCheck ? "" : "not"} verified</p>
                         </div>
                         <div className="col-md-1">
                             <input

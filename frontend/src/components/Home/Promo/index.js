@@ -5,14 +5,16 @@ import * as ROUTES from '../../../constants/routes';
 export class Promo extends Component {
   render() {
     return (
-        <div className="row">
-            <section id="promo">
-            <div>
+        <div className="row" id="promo">
+          <div className="col-md-2"></div>
+          <div className="col-md-8">
+          <div>
                 <p className="font-weight-bold">Welcome ICISTS!</p>
                 <Link to={ROUTES.APPLICATION} style={{marginRight : '10px'}}><button type="button" class="btn btn-info">Apply</button></Link>
                 <Link to={ROUTES.EVENT}><button type="button" class="btn btn-info">Event</button></Link>
-            </div>
-            </section>
+          </div>
+          </div>
+          <div className="col-md-2"></div>
         </div>
     )
   }

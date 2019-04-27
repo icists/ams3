@@ -6,8 +6,8 @@ export class Icists2019 extends Component {
     return (
       <div id="icists-2019">
         <div className="row">
-          <div className="col-2"></div>
-          <div className="col-8">
+          <div className="col-1"></div>
+          <div className="col-10">
             <h2>The Art of Science: Expression</h2>
             <img src={topicimg} alt=""/>
             <h4>[씨 뿌리는 사람, 왼쪽부터 밀레, 고흐]</h4>

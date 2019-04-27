@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Navbar from "../Navbar";
 import Home from '../Home';
@@ -15,10 +15,10 @@ import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session"
 
 const App = () => (
-        <HashRouter>
+        <BrowserRouter>
             <div>
-                <Navbar />
                 <div className="container">
+                <Navbar />
                 <Switch>
                     <Route exact path={ROUTES.HOME} component={Home} />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
@@ -31,7 +31,7 @@ const App = () => (
                 <Footer />
                 </div>
             </div>
-        </HashRouter>
+        </BrowserRouter>
 )
 
 export default withAuthentication(App);
