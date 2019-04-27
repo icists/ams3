@@ -120,10 +120,11 @@ class ApplicationBase extends React.Component {
                 <div className="app-nationality">
                     <label htmlFor="app-nationality-select">Nationality</label>
                     <select
+                        className="app-nationality-select"
                         name="nationality"
                         value={this.state.nationality}
-                        onChange={this.onChange}
-                        className="app-nationality-select" >
+                        data-live-search="true"
+                        onChange={this.onChange} >
                         <option value="" disabled selected>Select your country</option>
                         {this.options.countries}
                     </select>
