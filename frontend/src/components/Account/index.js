@@ -9,12 +9,12 @@ import { compose } from 'recompose';
 const AccountPage = () => (
     <AuthUserContext.Consumer>
         {authUser => (
-            <div>
+            <div className="account">
                 <h1>
                     Account
                 </h1>
                 <h3>
-                    Account: { authUser.email }
+                    Login Email : { authUser.email }
                 </h3>
                 <PasswordChangeForm />
             </div>
