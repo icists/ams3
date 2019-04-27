@@ -22,13 +22,13 @@ const App = () => (
                 <div className="col-sm-1"></div>
                 <div className="col-sm-10">
                 <Switch>
-                <Route exact path={ROUTES.HOME} component={Home} />
-                <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-                <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-                <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-                <Route path={ROUTES.APPLICATION} component={ApplicationPage} />
-                <Route path={ROUTES.DASHBOARD} component={Dashboard} />
-                <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+                    <Route exact path={ROUTES.HOME} component={Home} />
+                    <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+                    <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+                    <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+                    <Route path={ROUTES.APPLICATION} component={ApplicationPage} />
+                    <Route path={ROUTES.DASHBOARD} component={Dashboard} />
+                    <Route path={ROUTES.ACCOUNT} component={AccountPage} />
                 </Switch>
                 <Footer />
                 </div>
