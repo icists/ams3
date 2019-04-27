@@ -1,3 +1,6 @@
+html, body {
+  width: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -11,4 +14,115 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.forget-password{
+  margin: 5px auto;
+}
+
+/* signin */
+.sign-in{
+  position: absolute;
+  margin-bottom: auto;
+  margin-left: auto;
+  color: black;
+  text-align: center;
+}
+.sign-in h1{
+  font-size: 40px;
+  margin-top: 125px;
+  margin-bottom: 30px;
+}
+.sign-in .tbox input{
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: center;
+  line-height: 37px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+
+}
+.sign-in .tbox{
+  height: 40px;
+  background: #f1f1f1b3;
+  border-radius: 10px;
+  margin: 7px auto;
+}
+.sign-in-btn {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+.forget-password-link{
+  padding: 10px 0;
+  text-decoration: none;
+  margin: 15px auto;
+}
+.sign-in-alert {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+/* signup */
+.sign-up{
+  position: absolute;
+  margin-bottom: auto;
+  margin-left: auto;
+  color: black;
+  text-align: center;
+}
+.sign-up h1{
+  font-size: 40px;
+  margin-top: 125px;
+  margin-bottom: 30px;
+}
+.sign-up .tbox input{
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: center;
+  line-height: 37px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+
+}
+.sign-up .tbox{
+  height: 40px;
+  background: #f1f1f1b3;
+  border-radius: 10px;
+  margin: 7px auto;
+}
+.sign-up-btn {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin: 15px auto;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+.sign-up-alert {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+.align-right ul{
+  float: right;
 }

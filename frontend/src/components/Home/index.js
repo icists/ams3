@@ -1,17 +1,11 @@
 import React from "react";
 
-import { withAuthorization } from "../Session";
-
-const HomePage = () => {
+const Landing = () => {
     return (
         <div>
-            <h1>
-                ICISTS Application Home
-            </h1>
+            Landing
         </div>
     );
 }
 
-const condition = authUser => authUser != null
-
-export default withAuthorization(condition)(HomePage);
+export default Landing;
