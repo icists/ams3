@@ -1,6 +1,6 @@
 import React from "react";
 
-import { withAuthorization } from "../Session";
+import { withAuthorization, withEmailVerification } from "../Session";
 import { withFirebase } from "../Firebase";
 
 import { compose } from "recompose";
@@ -238,6 +238,7 @@ class ApplicationBase extends React.Component {
 const condition = authUser => authUser != null;
 
 const Application = compose(
+    withEmailVerification,
     withAuthorization(condition),
     withFirebase
 )(ApplicationBase);
