@@ -41,13 +41,16 @@ class SignUpFormBase extends React.Component {
                     email,
                 });
             })
+            .then(() => {
+                return this.props.firebase.doSendEmailVerification();
+            })
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
                 this.props.history.push(ROUTES.HOME);
-                alert(authUser);
             })
             .catch(error => {
-                alert(error.message);
+                if (error != undefined)
+                    alert(error.message);
                 this.setState({ error });
             });
         
@@ -82,7 +85,7 @@ class SignUpFormBase extends React.Component {
                 value={username}
                 onChange={this.onChange}
                 type="text"
-                placeholder="Full Name"
+                placeholder="User Name"
                 />
                 <input
                 name="email"
