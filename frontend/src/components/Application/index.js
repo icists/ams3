@@ -19,7 +19,7 @@ const INITIAL_STATE = {
     prev: false,
 }
 
-class ApplicationFormBase extends React.Component {
+class ApplicationBase extends React.Component {
     constructor(props) {
         super(props);
         this.state = { ...INITIAL_STATE };
@@ -33,3 +33,8 @@ class ApplicationFormBase extends React.Component {
         );
     }
 }
+
+const condition = authUser => authUser != null;
+const Application = withAuthorization(condition)(ApplicationBase);
+
+export default Application;
