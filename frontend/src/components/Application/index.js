@@ -67,10 +67,13 @@ class ApplicationBase extends React.Component {
     onChange = event => {
         const target = event.target;
         const name = target.name;
-        const value = target.value;
-        console.log(target, name, value);
+        let value = target.value;
+        if (target.type === "checkbox") {
+            value = target.checked
+            console.log(value);
+        }
         this.setState({
-            [name]: target.value
+            [name]: value
         });
     }
     
@@ -84,10 +87,12 @@ class ApplicationBase extends React.Component {
     }
 
     isValidState = () => {
-
+        let valid = true
+        return valid;
     }
 
     render() {
+        console.log(this.state);
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="app-name">
@@ -165,18 +170,18 @@ class ApplicationBase extends React.Component {
                         {this.options.ages}
                     </select>
                 </div>
-                <div className="app-group">
+                <div className="app-group-check-box">
                     <input
                         name="groupState"
                         className="app-group-check"
                         type="checkbox"
                         onChange={this.onChange}
-                        checked={this.state.groupState} />
+                        value={this.state.groupState} />
                     <label className="app-group-check-label" htmlFor="app-group-check">
                         Are you participating in a group?
                     </label>
                 </div>
-                <div className="app-group">
+                <div className="app-group-name">
                     Group Name
                     <input
                         name="groupName"
