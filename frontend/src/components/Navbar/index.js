@@ -63,9 +63,6 @@ const NavigationForAuth = () => (
         <NavLink href='/dashboard'>Dashboard</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink href='/application'>Application</NavLink>
-      </NavItem>
-      <NavItem>
         <NavLink href='/account'>Account</NavLink>
       </NavItem>
       <NavItem>
