@@ -61,11 +61,11 @@ class ApplicationBase extends React.Component {
         this.props.firebase
             .userApplication(this.props.firebase.auth.currentUser.uid)
             .once('value', snapshot => {
-                const data = snapshot.val();
                 this.setState({
-                    ...data
+                    ...snapshot.val()
                 })
             })
+        
     }
 
     validateEmail = email => {
@@ -182,6 +182,7 @@ class ApplicationBase extends React.Component {
                         className="app-group-check"
                         type="checkbox"
                         onChange={this.onChange}
+                        checked={this.state.groupState}
                         value={this.state.groupState} />
                     <label className="app-group-check-label" htmlFor="app-group-check">
                         Are you participating in a group?
@@ -214,9 +215,22 @@ class ApplicationBase extends React.Component {
                         className="app-provision-check"
                         onChange={this.onChange}
                         type="checkbox"
+                        checked={this.state.provision}
                         value={this.state.provision} />
                     <label className="app-provision-check-label" htmlFor="app-provision-check">
                         Do you agree with the provision?
+                    </label>
+                </div>
+                <div className="app-visa">
+                    <input
+                        name="visa"
+                        className="app-visa-check"
+                        onChange={this.onChange}
+                        type="checkbox"
+                        checked={this.state.visa}
+                        value={this.state.visa} />
+                    <label className="app-visa-check-label" htmlFor="app-visa-check">
+                        Do you need a support for visa?
                     </label>
                 </div>
                 <div className="app-financial-aid">
@@ -225,6 +239,7 @@ class ApplicationBase extends React.Component {
                         className="app-financial-aid-check"
                         onChange={this.onChange}
                         type="checkbox"
+                        checked={this.state.financialAid}
                         value={this.state.financialAid} />
                     <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
                         Do you need financial aid?
@@ -236,6 +251,7 @@ class ApplicationBase extends React.Component {
                         className="app-prev-participation-check"
                         onChange={this.onChange}
                         type="checkbox"
+                        checked={this.state.prevParticipation}
                         value={this.state.prevParticipation} />
                     <label className="app-prev-participation-check" htmlFor="app-prev-participation-check">
                         Have you participated ICISTS before?

@@ -1,5 +1,4 @@
 import React from "react";
-import { Divider } from "semantic-ui-react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Navbar from "../Navbar";
@@ -19,13 +18,13 @@ const App = () => (
             <div className="container">
                 <Navbar />
                 <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/signup' component={SignUpPage} />
-                    <Route path='/signin' component={SignInPage} />
-                    <Route path='/passwordforget' component={PasswordForgetPage} />
-                    <Route path='/application' component={ApplicationPage} />
-                    <Route path='/dashboard' component={Dashboard} />
-                    <Route path='/account' component={AccountPage} />
+                <Route exact path={ROUTES.HOME} component={Home} />
+                <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+                <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+                <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+                <Route path={ROUTES.APPLICATION} component={ApplicationPage} />
+                <Route path={ROUTES.DASHBOARD} component={Dashboard} />
+                <Route path={ROUTES.ACCOUNT} component={AccountPage} />
                 </Switch>
             </div>
         </BrowserRouter>
