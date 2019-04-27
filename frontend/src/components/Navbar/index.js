@@ -35,22 +35,18 @@ class Navigation extends Component {
   }
   render() {
     return(
-  <div className="row navbar">
-  <div className="col-12">
-  <Navbar color="light" light expand="md">
-    <NavbarBrand href="/">
-    <img src={logo} height="30" alt="icists logo"/>
-    </NavbarBrand>
-    <NavbarToggler onClick={this.toggle} />
-    <Collapse isOpen={this.state.isOpen} navbar>
-        <AuthUserContext.Consumer>
-          {authUser =>
-            authUser ? <NavigationForAuth /> : <NavigationForNonAuth /> }
-        </AuthUserContext.Consumer>
-    </Collapse>
-  </Navbar>
-  </div>
-  </div>
+    <Navbar color="light" light expand="md">
+      <NavbarBrand href="/">
+      <img src={logo} height="30" alt="icists logo"/>
+      </NavbarBrand>
+      <NavbarToggler onClick={this.toggle} />
+      <Collapse isOpen={this.state.isOpen} navbar>
+          <AuthUserContext.Consumer>
+            {authUser =>
+              authUser ? <NavigationForAuth /> : <NavigationForNonAuth /> }
+          </AuthUserContext.Consumer>
+      </Collapse>
+    </Navbar>
     )
   }
 }
@@ -61,9 +57,9 @@ const NavigationForAuth = () => (
         <NavItem>
             <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
         </NavItem>
-        <NavItem>
+        {/* <NavItem>
             <Link className="nav-link" to={ROUTES.DASHBOARD}>Dashboard</Link>
-        </NavItem>
+        </NavItem> */}
         <NavItem>
             <Link className="nav-link" to={ROUTES.APPLICATION}>Application</Link>
         </NavItem>

@@ -16,6 +16,10 @@ code {
     monospace;
 }
 
+.container{
+  overflow: hidden;
+}
+
 .forget-password{
   margin: 5px auto;
 }
@@ -30,8 +34,7 @@ code {
 
 /* signin */
 .sign-in{
-  position: absolute;
-  margin-bottom: auto;
+  margin-bottom: 300px;
   margin-left: auto;
   color: black;
   text-align: center;
@@ -85,8 +88,7 @@ code {
 
 /* signup */
 .sign-up{
-  position: absolute;
-  margin-bottom: auto;
+  margin-bottom: 300px;
   margin-left: auto;
   color: black;
   text-align: center;
@@ -238,8 +240,8 @@ code {
   margin: 50px auto;
 }
 .more-info img{
-  width: 80%;
-  margin: 30px;
+  width: 100%;
+  margin: 30px auto;
 }
 .more-info h2::after{
   content: '';
@@ -261,4 +263,86 @@ code {
   background-attachment: fixed;
   text-align: center;
   padding: 100px;
+}
+
+/* application */
+.application{
+  margin: 30px auto;
+}
+.application h1{
+  margin-bottom: 10px;
+}
+.application h1::after{
+  content: '';
+  background: #2c3e50;
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.app-name{
+  margin-top: 20px;
+}
+.app-name h3{
+  margin: 20px auto;
+}
+.app-sex-age{
+  margin-top: 10px;
+}
+.app-nsm{
+  margin-top: 10px;
+  margin-bottom: 20px
+}
+.app-group{
+  margin: 20px auto;
+}
+.app-group h3{
+  margin: 20px auto;
+}
+.app-contact{
+  margin: 20px auto;
+}
+.app-contact h3{
+  margin: 20px auto;
+}
+.app-as{
+  margin: 20px auto;
+}
+.app-as h3{
+  margin: 20px auto;
+}
+.app-as .row{
+  margin: 10px auto;
+}
+.app-payment{
+  margin: 30px auto;
+}
+.app-essay{
+  margin: 30px auto;
+}
+.app-essay h3{
+  margin-bottom: 20px;
+}
+.app-channel{
+  margin: 40px auto;
+}
+.app-save{
+  margin-bottom: 300px;
+}
+.application input{
+  width: 100%;
+  background: none;
+  /* border: none; */
+  outline: none;
+  text-align: center;
+  line-height: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+.application .tbox{
+  height: 40px;
+  background: #f1f1f1b3;
+  border-radius: 10px;
+  margin: 7px auto;
 }

@@ -101,7 +101,7 @@ class ApplicationBase extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="application">
             <h1>ICISTS 2019 Application</h1>
             <form onSubmit={this.onSubmit}>
                 <div className="app-name">
@@ -136,6 +136,8 @@ class ApplicationBase extends React.Component {
                                 />
                         </div>
                     </div>
+                </div>
+                <div className="app-sex-age">                
                     <div className="row">
                         <div className="col-md-2">
                             <label htmlFor="app-sex-select">Sex</label>
@@ -164,166 +166,183 @@ class ApplicationBase extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-4">
-                        <div className="app-nationality">
-                            <label htmlFor="app-nationality-select">Nationality</label>
-                            <select
-                                className="app-nationality-select w-100"
-                                name="nationality"
-                                value={this.state.nationality}
-                                data-live-search="true"
-                                onChange={this.onChange} >
-                                <option value="" disabled selected>Select your country</option>
-                                {this.options.countries}
-                            </select>
+                <div className="app-nsm">
+                    <div className="row">
+                        <div className="col-md-4">
+                            <div className="app-nationality">
+                                <label htmlFor="app-nationality-select">Nationality</label>
+                                <select
+                                    className="app-nationality-select w-100"
+                                    name="nationality"
+                                    value={this.state.nationality}
+                                    data-live-search="true"
+                                    onChange={this.onChange} >
+                                    <option value="" disabled selected>Select your country</option>
+                                    {this.options.countries}
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="app-school">
-                            <label htmlFor="app-school-select">School</label>
-                            <select
-                                name="school"
-                                value={this.state.school}
-                                onChange={this.onChange}
-                                className="app-school-select w-100" >
-                                <option value="" disabled selected>Select your school</option>
-                                {this.options.schools}
-                            </select>
+                        <div className="col-md-4">
+                            <div className="app-school">
+                                <label htmlFor="app-school-select">School</label>
+                                <select
+                                    name="school"
+                                    value={this.state.school}
+                                    onChange={this.onChange}
+                                    className="app-school-select w-100" >
+                                    <option value="" disabled selected>Select your school</option>
+                                    {this.options.schools}
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="app-major">
-                            Major
-                            <input
-                                className="app-major-input w-100"
-                                name="major"
-                                value={this.state.major}
-                                onChange={this.onChange}
-                                type="text"
-                                placeholder="Broomstick Engineering"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <hr/>
-                <h3>
-                    Group Participatioin
-                </h3>
-                <div className="row">
-                    <div className="col-md-1">
-                        <div className="app-group-check-box">
-                            <input
-                                name="groupState"
-                                className="app-group-check"
-                                type="checkbox"
-                                onChange={this.onChange}
-                                checked={this.state.groupState}
-                                value={this.state.groupState} />
-                        </div>
-                    </div>
-                    <div className="col-md-5">
-                        <label className="app-group-check-label" htmlFor="app-group-check">
-                            Are you participating in a group?
-                        </label>
-                    </div>
-                    <div className="col-md-3">
-                        Group Name
-                    </div>
-                    <div className="col-md-3">
-                        <div>
-                            <div className="app-group-name">
+                        <div className="col-md-4">
+                            <div className="app-major">
+                                Major
                                 <input
-                                    disabled={!this.state.groupState}
-                                    name="groupName"
-                                    value={this.state.groupName}
+                                    className="app-major-input w-100"
+                                    name="major"
+                                    value={this.state.major}
                                     onChange={this.onChange}
                                     type="text"
-                                    placeholder="Your Group Name"
+                                    placeholder="Broomstick Engineering"
                                 />
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <hr/>
-                <h3>
-                    Contact
-                </h3>
-                <div className="row">
-                    <div className="col-md-1">
-                        <label htmlFor="app-email-select">Email</label>
-                    </div>
-                    <div className="col-md-5">
-                        <input
-                            className="app-email-select w-100"
-                            name="notification_email"
-                            value={this.state.notification_email}
-                            onChange={this.onChange}
-                            placeholder="Email address to get notified from ICISTS"
-                            type="email"/>
-                    </div>
-                    <div className="col-md-6">
-                        We will send you information email via this address.
+                <div className="app-group">
+                    <h3>
+                        Group Participatioin
+                    </h3>
+                    <div className="row">
+                        <div className="col-md-1">
+                            <div className="app-group-check-box">
+                                <input
+                                    name="groupState"
+                                    className="app-group-check"
+                                    type="checkbox"
+                                    onChange={this.onChange}
+                                    checked={this.state.groupState}
+                                    value={this.state.groupState} />
+                            </div>
+                        </div>
+                        <div className="col-md-5">
+                            <label className="app-group-check-label" htmlFor="app-group-check">
+                                Are you participating in a group?
+                            </label>
+                        </div>
+                        <div className="col-md-3">
+                            Group Name
+                        </div>
+                        <div className="col-md-3">
+                            <div>
+                                <div className="app-group-name">
+                                    <input
+                                        disabled={!this.state.groupState}
+                                        name="groupName"
+                                        value={this.state.groupName}
+                                        onChange={this.onChange}
+                                        type="text"
+                                        placeholder="Your Group Name"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr/>
-                <h3>
-                    Agreements & Supports
-                </h3>
-                <div className="row">
-                    <div className="col-6">
-                        <div className="app-provision">
+                <div className="app-contact">
+                    <h3>
+                        Contact
+                    </h3>
+                    <div className="row">
+                        <div className="col-md-1">
+                            <label htmlFor="app-email-select">Email</label>
+                        </div>
+                        <div className="col-md-5">
                             <input
-                                name="provision"
-                                className="app-provision-check"
+                                className="app-email-select w-100"
+                                name="notification_email"
+                                value={this.state.notification_email}
                                 onChange={this.onChange}
-                                type="checkbox"
-                                checked={this.state.provision}
-                                value={this.state.provision} />
-                            <label className="app-provision-check-label" htmlFor="app-provision-check">
-                                Do you agree with the provision?
-                            </label>
+                                placeholder="Email address to get notified from ICISTS"
+                                type="email"/>
+                        </div>
+                        <div className="col-md-6">
+                            We will send you information email via this address.
                         </div>
                     </div>
-                    <div className="col-6">
-                        <div className="app-prev-participation">
-                            <input
-                                name="prevParticipation"
-                                className="app-prev-participation-check"
-                                onChange={this.onChange}
-                                type="checkbox"
-                                checked={this.state.prevParticipation}
-                                value={this.state.prevParticipation} />
+                </div>
+                <hr/>
+                <div className="app-as">
+                    <h3>
+                        Agreements & Supports
+                    </h3>
+                    <div className="row">
+                        <div className="col-md-1">
+                            <div className="app-provision">
+                                <input
+                                    name="provision"
+                                    className="app-provision-check"
+                                    onChange={this.onChange}
+                                    type="checkbox"
+                                    checked={this.state.provision}
+                                    value={this.state.provision} />
+                            </div>
+                        </div>
+                        <div className="col-md-5">
+                            <label className="app-provision-check-label" htmlFor="app-provision-check">
+                                Do you agree with the provision?
+                            </label>    
+                        </div>
+                        <div className="col-md-1">
+                            <div className="app-prev-participation">
+                                <input
+                                    name="prevParticipation"
+                                    className="app-prev-participation-check"
+                                    onChange={this.onChange}
+                                    type="checkbox"
+                                    checked={this.state.prevParticipation}
+                                    value={this.state.prevParticipation} />
+                            </div>
+                        </div>
+                        <div className="col-md-5">
                             <label className="app-prev-participation-check" htmlFor="app-prev-participation-check">
                                 Have you participated ICISTS before?
                             </label>
                         </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-6">
-                        <div className="app-visa">
-                            <input
-                                name="visa"
-                                className="app-visa-check"
-                                onChange={this.onChange}
-                                type="checkbox"
-                                checked={this.state.visa}
-                                value={this.state.visa} />
+                    <div className="row">
+                        <div className="col-md-1">
+                            <div className="app-visa">
+                                <input
+                                    name="visa"
+                                    className="app-visa-check"
+                                    onChange={this.onChange}
+                                    type="checkbox"
+                                    checked={this.state.visa}
+                                    value={this.state.visa} />
+                            </div>
+                        </div>
+                        <div className="col-md-5">
                             <label className="app-visa-check-label" htmlFor="app-visa-check">
                                 Do you need a support for visa?
                             </label>
                         </div>
-                    </div>
-                    <div className="col-6">
-                        <div className="app-financial-aid">
-                            <input
-                                name="financialAid"
-                                className="app-financial-aid-check"
-                                onChange={this.onChange}
-                                type="checkbox"
-                                checked={this.state.financialAid}
-                                value={this.state.financialAid} />
+                        <div className="col-md-1">
+                            <div className="app-financial-aid">
+                                <input
+                                    name="financialAid"
+                                    className="app-financial-aid-check"
+                                    onChange={this.onChange}
+                                    type="checkbox"
+                                    checked={this.state.financialAid}
+                                    value={this.state.financialAid} />
+                            </div>
+                        </div>
+                        <div className="col-md-5">
                             <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
                                 Do you need financial aid?
                             </label>
@@ -331,38 +350,42 @@ class ApplicationBase extends React.Component {
                     </div>
                 </div>
                 <hr/>
-                <div className="row">
-                    <div className="col-md-4">
-                        Your payment is verified
-                    </div>
-                    <div className="col-md-2">
-                        <input
-                        disabled
-                        name="paymentCheck"
-                        className="app-payment-check-check"
-                        onChange={this.onChange}
-                        type="checkbox"
-                        checked={this.state.paymentCheck}
-                        value={this.state.paymentCheck} />
-                    </div>
-                    <div className="col-md-6">
-                        If you have any concern about payment, please contact us.
+                <div className="app-payment">
+                    <div className="row">
+                        <div className="col-md-3">
+                            Your payment is verified
+                        </div>
+                        <div className="col-md-1">
+                            <input
+                            disabled
+                            name="paymentCheck"
+                            className="app-payment-check-check"
+                            onChange={this.onChange}
+                            type="checkbox"
+                            checked={this.state.paymentCheck}
+                            value={this.state.paymentCheck} />
+                        </div>
+                        <div className="col-md-8">
+                            If you have any concern about payment, please contact us.
+                        </div>
                     </div>
                 </div>
                 <hr />
-                <div className="row">
-                    <div className="col">
-                        Essay
+                <div className="app-essay">
+                    <div className="row">
+                        <div className="col">
+                            <h3>Essay</h3>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <textarea
-                            className="app-essay-input form-control"
-                            rows="10"
-                            name="essay"
-                            onChange={this.onChange}
-                            value={this.state.essay} />
+                    <div className="row">
+                        <div className="col-md-12">
+                            <textarea
+                                className="app-essay-input form-control"
+                                rows="10"
+                                name="essay"
+                                onChange={this.onChange}
+                                value={this.state.essay} />
+                        </div>
                     </div>
                 </div>
                 <hr/>
@@ -387,14 +410,15 @@ class ApplicationBase extends React.Component {
                 </div>
                 <div className="app-save">
                     <div className="row">
-                            <div className="col-md-4">
-                                <button type="submit">
+                            <div className="col-md-9">
+                                <p className="text-center">Your application is saved at {this.state.lastUpdate}</p>
+                            </div>
+                            <div className="col-md-2">
+                                <button type="submit" className="btn btn-primary w-100">
                                     Save
                                 </button>
                             </div>
-                            <div className="col-md-8">
-                                Your application is saved at {this.state.lastUpdate}
-                            </div>
+                            <div className="col-md-auto"></div>
                     </div>
                 </div>
             </form>

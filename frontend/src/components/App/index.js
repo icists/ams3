@@ -18,9 +18,7 @@ const App = () => (
         <HashRouter>
             <div>
                 <Navbar />
-                <div className="row">
-                <div className="col-sm-1"></div>
-                <div className="col-sm-10">
+                <div className="container">
                 <Switch>
                     <Route exact path={ROUTES.HOME} component={Home} />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
@@ -31,8 +29,6 @@ const App = () => (
                     <Route path={ROUTES.ACCOUNT} component={AccountPage} />
                 </Switch>
                 <Footer />
-                </div>
-                <div className="col-sm-1"></div>
                 </div>
             </div>
         </HashRouter>
