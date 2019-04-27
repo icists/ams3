@@ -99,6 +99,8 @@ class ApplicationBase extends React.Component {
 
     render() {
         return (
+            <div>
+            <h1>ICISTS 2019 Application</h1>
             <form onSubmit={this.onSubmit}>
                 <div className="app-name">
                     <div className="row">
@@ -349,6 +351,7 @@ class ApplicationBase extends React.Component {
                     </button>
                 </div>
             </form>
+            </div>
         );
     }
 }
