@@ -1,16 +1,13 @@
 import React from "react";
 import { Divider } from "semantic-ui-react";
-import {
-    BrowserRouter as Router,
-    Route,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Navigation from "../Navigation";
-import LandingPage from '../Landing';
+import Navbar from "../Navbar";
+import Home from '../Home';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget';
-import HomePage from '../Home';
+import Dashboard from '../Dashboard';
 import AccountPage from '../Account';
 import ApplicationPage from "../Application";
 
@@ -18,19 +15,20 @@ import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session"
 
 const App = () => (
-        <Router>
-            <Navigation />
-
-            <Divider horizontal>WELCOME TO ICISTS 2019</Divider>
-
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-            <Route path={ROUTES.HOME} component={HomePage} />
-            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-            <Route path={ROUTES.APPLICATION} component={ApplicationPage} />
-        </Router>
+        <BrowserRouter>
+            <div className="container">
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/signup' component={SignUpPage} />
+                    <Route path='/signin' component={SignInPage} />
+                    <Route path='/passwordforget' component={PasswordForgetPage} />
+                    <Route path='/application' component={ApplicationPage} />
+                    <Route path='/dashboard' component={Dashboard} />
+                    <Route path='/account' component={AccountPage} />
+                </Switch>
+            </div>
+        </BrowserRouter>
 )
 
 export default withAuthentication(App);
