@@ -22,6 +22,7 @@ const INITIAL_STATE = {
     groupState: false,
     groupName: "",
     visa: false,
+    channel: "",
     financialAid: false,
     prevParticipation: false,
 }
@@ -34,14 +35,13 @@ const range = (start, end) => {
 class ApplicationBase extends React.Component {
     constructor(props) {
         super(props);
-        this.i = 0;
 
         this.options = {
             countries: countryList().getData().map(element => (
                 <option value={element.label}>{element.label}</option>
             )),
             schools: schoolOptions.map(element => (
-                <option value={element.name}>{element.name} ({element.country_code})</option>
+                <option value={element.name}>({element.country_code}) {element.name}</option>
             )),
             genders: genderOptions.map(element => (
                 <option value={element.text}>{element.text}</option>
@@ -57,6 +57,15 @@ class ApplicationBase extends React.Component {
         this.state = {
             ...INITIAL_STATE
         };
+
+        this.props.firebase
+            .userApplication(this.props.firebase.auth.currentUser.uid)
+            .once('value', snapshot => {
+                const data = snapshot.val();
+                this.setState({
+                    ...data
+                })
+            })
     }
 
     validateEmail = email => {
@@ -70,7 +79,6 @@ class ApplicationBase extends React.Component {
         let value = target.value;
         if (target.type === "checkbox") {
             value = target.checked
-            console.log(value);
         }
         this.setState({
             [name]: value
@@ -78,8 +86,6 @@ class ApplicationBase extends React.Component {
     }
     
     onSubmit = event => {
-        console.log(this.state);
-        debugger;
         const uid = this.props.firebase.auth.currentUser.uid;
         this.props.firebase.userApplication(uid).set({
             ...this.state
@@ -92,7 +98,6 @@ class ApplicationBase extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <form onSubmit={this.onSubmit}>
                 <div className="app-name">
@@ -214,19 +219,49 @@ class ApplicationBase extends React.Component {
                         Do you agree with the provision?
                     </label>
                 </div>
+                <div className="app-financial-aid">
+                    <input
+                        name="financialAid"
+                        className="app-financial-aid-check"
+                        onChange={this.onChange}
+                        type="checkbox"
+                        value={this.state.financialAid} />
+                    <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
+                        Do you need financial aid?
+                    </label>
+                </div>
+                <div className="app-prev-participation">
+                    <input
+                        name="prevParticipation"
+                        className="app-prev-participation-check"
+                        onChange={this.onChange}
+                        type="checkbox"
+                        value={this.state.prevParticipation} />
+                    <label className="app-prev-participation-check" htmlFor="app-prev-participation-check">
+                        Have you participated ICISTS before?
+                    </label>
+                </div>
                 <hr/>
                 <div className="app-essay">
                     Essay
                     <input
                         className="app-essay-input"
-                        type="textarea"></input>
+                        name="essay"
+                        type="textarea"
+                        onChange={this.onChange}
+                        value={this.state.essay} >
+                    </input>
                 </div>
                 <hr/>
                 <div className="app-channel">
                     <label htmlFor="app-channel-select">
                         How did you know about ICISTS?
                     </label>
-                    <select className="app-channel-select" >
+                    <select
+                        name="channel"
+                        className="app-channel-select"
+                        onChange={this.onChange}
+                        value={this.state.channel} >
                         <option value="" disabled selected>I've heard about ICISTS from...</option>
                         {this.options.channels}
                     </select>
