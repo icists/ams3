@@ -26,15 +26,15 @@ class DashboardBase extends React.Component {
         return (
             <div>
                 <div className="dashboard-application">
-                    <hr>Personal Information</hr>
+                    <hr></hr>
                     {this.state.nameFirst}
                     {this.state.nameLast}
                     {this.state.age}
                     {this.state.sex}
                     {this.state.nationality}
+                    <hr></hr>
                     {this.state.school}
                     {this.state.major}
-                    <hr>Application Information</hr>
                     {this.state.groupState}
                     {this.state.groupName}
                     {this.state.finalcialAid}
