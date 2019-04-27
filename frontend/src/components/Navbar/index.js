@@ -57,17 +57,16 @@ const NavigationForAuth = () => (
   <div>
     <Nav className="ml-auto" navbar>
         <NavItem>
-            <NavLink href={ROUTES.HOME}>Home</NavLink>
-            <Link to={ROUTES.HOME}>Home</Link>
+            <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
         </NavItem>
         <NavItem>
-            <Link to={ROUTES.DASHBOARD}>Dashboard</Link>
+            <Link className="nav-link" to={ROUTES.DASHBOARD}>Dashboard</Link>
         </NavItem>
         <NavItem>
-            <Link to={ROUTES.APPLICATION}>Application</Link>
+            <Link className="nav-link" to={ROUTES.APPLICATION}>Application</Link>
         </NavItem>
         <NavItem>
-            <Link to={ROUTES.ACCOUNT}>Account</Link>
+            <Link className="nav-link" to={ROUTES.ACCOUNT}>Account</Link>
         </NavItem>
         <NavItem>
             <SignOutButton />
