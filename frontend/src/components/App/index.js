@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 
 import Navbar from "../Navbar";
 import Home from '../Home';
@@ -15,7 +15,7 @@ import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session"
 
 const App = () => (
-        <BrowserRouter>
+        <HashRouter>
             <div>
                 <Navbar />
                 <div className="row">
@@ -35,7 +35,7 @@ const App = () => (
                 <div className="col-sm-1"></div>
                 </div>
             </div>
-        </BrowserRouter>
+        </HashRouter>
 )
 
 export default withAuthentication(App);
