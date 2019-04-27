@@ -1,11 +1,21 @@
-import React from "react";
+import React, { Component } from 'react'
+import homeimg from '../../assets/img/slide2.jpg'
+import Promo from './Promo'
 
-const Landing = () => {
+export class Home extends Component {
+  render() {
     return (
-        <div>
-            Landing
-        </div>
-    );
+<div className="home">
+<div className="row">
+<div className="col-1 home-side">side</div>
+<div className="col-11 home-content">
+    {/* <img src={homeimg} alt=""/> */}
+    <Promo />
+</div>
+</div>
+</div>
+    )
+  }
 }
 
-export default Landing;
+export default Home
