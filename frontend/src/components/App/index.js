@@ -9,14 +9,18 @@ import PasswordForgetPage from '../PasswordForget';
 import Dashboard from '../Dashboard';
 import AccountPage from '../Account';
 import ApplicationPage from "../Application";
+import Footer from '../Footer'
 
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session"
 
 const App = () => (
         <BrowserRouter>
-            <div className="container">
+            <div>
                 <Navbar />
+                <div className="row">
+                <div className="col-sm-1"></div>
+                <div className="col-sm-10">
                 <Switch>
                 <Route exact path={ROUTES.HOME} component={Home} />
                 <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
@@ -26,6 +30,10 @@ const App = () => (
                 <Route path={ROUTES.DASHBOARD} component={Dashboard} />
                 <Route path={ROUTES.ACCOUNT} component={AccountPage} />
                 </Switch>
+                <Footer />
+                </div>
+                <div className="col-sm-1"></div>
+                </div>
             </div>
         </BrowserRouter>
 )
