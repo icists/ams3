@@ -60,9 +60,6 @@ const NavigationForAuth = () => (
         <NavItem>
             <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
         </NavItem>
-        {/* <NavItem>
-            <Link className="nav-link" to={ROUTES.DASHBOARD}>Dashboard</Link>
-        </NavItem> */}
         <NavItem>
             <Link className="nav-link" to={ROUTES.APPLICATION}>Application</Link>
         </NavItem>
