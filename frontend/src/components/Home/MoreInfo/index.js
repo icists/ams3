@@ -8,7 +8,7 @@ export class MoreInfo extends Component {
       <div className="row">
         <div className="col-md-2"></div>
         <div className="col-md-8">
-            <div className="row title text-uppercase"><h2>Timetable</h2></div>
+            <div className="title text-uppercase"><h2>Timetable</h2></div>
             <img src={timetable} alt="timetable"/>
         </div>
         <div className="col-md-auto"></div>

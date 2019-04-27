@@ -9,7 +9,7 @@ export class Promo extends Component {
             <section id="promo">
             <div>
                 <p className="font-weight-bold">Welcome ICISTS!</p>
-                <Link to={ROUTES.APPLICATION} style={{marginRight : '10px'}}><button type="button" class="btn btn-info">Applicaion</button></Link>
+                <Link to={ROUTES.APPLICATION} style={{marginRight : '10px'}}><button type="button" class="btn btn-info">Apply</button></Link>
                 <Link to={ROUTES.EVENT}><button type="button" class="btn btn-info">Event</button></Link>
             </div>
             </section>
