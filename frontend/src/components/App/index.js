@@ -15,15 +15,17 @@ import { withAuthentication } from "../Session"
 
 const App = () => (
         <BrowserRouter>
-            <Navbar />
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route path='/signup' component={SignUpPage} />
-                <Route path='/signin' component={SignInPage} />
-                <Route path='/passwordforget' component={PasswordForgetPage} />
-                <Route path='/dashboard' component={Dashboard} />
-                <Route path='/account' component={AccountPage} />
-            </Switch>
+            <div className="container">
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/signup' component={SignUpPage} />
+                    <Route path='/signin' component={SignInPage} />
+                    <Route path='/passwordforget' component={PasswordForgetPage} />
+                    <Route path='/dashboard' component={Dashboard} />
+                    <Route path='/account' component={AccountPage} />
+                </Switch>
+            </div>
         </BrowserRouter>
 )
 
