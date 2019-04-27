@@ -74,7 +74,7 @@ const NavigationForAuth = () => (
 );
 
 const NavigationForNonAuth = () => (
-    <div className="navbar collapse navbar-collapse">
+    <div className="navbar">
         <Nav className="ml-auto" navbar>
             <NavItem>
                 <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
