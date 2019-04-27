@@ -67,7 +67,7 @@ class ApplicationBase extends React.Component {
     onChange = event => {
         const target = event.target;
         const name = target.name;
-        const value = name === "groupState" ? target.value === "on" : target.value;
+        const value = target.value;
         console.log(target, name, value);
         this.setState({
             [name]: target.value
@@ -198,7 +198,12 @@ class ApplicationBase extends React.Component {
                 </div>
                 <hr/>
                 <div className="app-provision">
-                    <input className="app-provision-check" type="checkbox" value="" />
+                    <input
+                        name="provision"
+                        className="app-provision-check"
+                        onChange={this.onChange}
+                        type="checkbox"
+                        value={this.state.provision} />
                     <label className="app-provision-check-label" htmlFor="app-provision-check">
                         Do you agree with the provision?
                     </label>
@@ -206,7 +211,9 @@ class ApplicationBase extends React.Component {
                 <hr/>
                 <div className="app-essay">
                     Essay
-                    <input className="app-essay-input" type="textarea"></input>
+                    <input
+                        className="app-essay-input"
+                        type="textarea"></input>
                 </div>
                 <hr/>
                 <div className="app-channel">
