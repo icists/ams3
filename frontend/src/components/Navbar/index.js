@@ -35,7 +35,7 @@ class Navigation extends Component {
   }
   render() {
     return(
-  <div className="row">
+  <div className="row navbar">
   <div className="col-12">
   <Navbar color="light" light expand="md">
     <NavbarBrand href="/">
