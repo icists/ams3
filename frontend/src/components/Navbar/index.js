@@ -56,75 +56,77 @@ class Navigation extends Component {
 const NavigationForAuth = () => (
   <div>
     <Nav className="ml-auto" navbar>
-      <NavItem>
-        <NavLink href='/'>Home</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href='/dashboard'>Dashboard</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href='/application'>Application</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href='/account'>Account</NavLink>
-      </NavItem>
-      <NavItem>
-        <SignOutButton />
-      </NavItem>
+        <NavItem>
+            <NavLink href={ROUTES.HOME}>Home</NavLink>
+            <Link to={ROUTES.HOME}>Home</Link>
+        </NavItem>
+        <NavItem>
+            <Link to={ROUTES.DASHBOARD}>Dashboard</Link>
+        </NavItem>
+        <NavItem>
+            <Link to={ROUTES.APPLICATION}>Application</Link>
+        </NavItem>
+        <NavItem>
+            <Link to={ROUTES.ACCOUNT}>Account</Link>
+        </NavItem>
+        <NavItem>
+            <SignOutButton />
+        </NavItem>
 
-      {/* <UncontrolledDropdown nav inNavbar>
-        <DropdownToggle nav caret>
-          Options
-        </DropdownToggle>
-        <DropdownMenu right>
-          <DropdownItem>
-            Option 1
-          </DropdownItem>
-          <DropdownItem>
-            Option 2
-          </DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>
-            Reset
-          </DropdownItem>
-        </DropdownMenu>
-      </UncontrolledDropdown> */}
-    </Nav>
+        {/* <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle nav caret>
+            Options
+            </DropdownToggle>
+            <DropdownMenu right>
+            <DropdownItem>
+                Option 1
+            </DropdownItem>
+            <DropdownItem>
+                Option 2
+            </DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>
+                Reset
+            </DropdownItem>
+            </DropdownMenu>
+        </UncontrolledDropdown> */}
+        </Nav>
   </div>
 );
 
 const NavigationForNonAuth = () => (
-  <div style={{float:'right'}}>
-    <Nav className="ml-auto" navbar>
-    <NavItem>
-      <NavLink href='/'>Home</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href='/signin'>Sign In</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href='/signup'>Sign Up</NavLink>
-    </NavItem>
-    {/* <UncontrolledDropdown nav inNavbar>
-      <DropdownToggle nav caret>
-        Options
-      </DropdownToggle>
-      <DropdownMenu right>
-        <DropdownItem>
-          Option 1
-        </DropdownItem>
-        <DropdownItem>
-          Option 2
-        </DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem>
-          Reset
-        </DropdownItem>
-      </DropdownMenu>
-    </UncontrolledDropdown> */}
-</Nav>
- 
-  </div>
+    <div style={{float:'right'}}>
+        <Nav className="ml-auto" navbar>
+            <NavItem>
+                <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
+            </NavItem>
+            <NavItem>
+                <Link className="nav-link" to={ROUTES.SIGN_IN}>Sign In</Link>
+            </NavItem>
+            <NavItem>
+                <Link className="nav-link" to={ROUTES.SIGN_UP}>Sign Up</Link>
+                
+            </NavItem>
+        {/* <UncontrolledDropdown nav inNavbar>
+          <DropdownToggle nav caret>
+            Options
+          </DropdownToggle>
+          <DropdownMenu right>
+            <DropdownItem>
+              Option 1
+            </DropdownItem>
+            <DropdownItem>
+              Option 2
+            </DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>
+              Reset
+            </DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown> */}
+        </Nav>
+  
+    </div>
 )
 
 export default Navigation;
