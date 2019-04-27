@@ -8766,6 +8766,11 @@ react-select-country-list@^1.0.7:
   resolved "https://registry.yarnpkg.com/react-select-country-list/-/react-select-country-list-1.0.7.tgz#5bc9b6cbb8f9b7dd7e799927d80d76672324c844"
   integrity sha512-UvweMItWPvKXVVOLuA8j5W63mCchS5iI8IwA8P7RWty3/4N3BTxx5V3HfAsaUEFNw4cFKXf5WoEKXzMtmh1uLg==
 
+react-timestamp@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-timestamp/-/react-timestamp-5.0.0.tgz#9469ae05713c01a4785dc2d12f9e6a84bd62bd25"
+  integrity sha512-Ig+LbeJn1BhGrGNh8qlbI0r4QcX/8BBphlmKF1w0HGEtBFR4Ge3NIASNm5TmsxPujUHgAKjgf0bnMD2LKdhGcQ==
+
 react-transition-group@^2.3.1:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"

@@ -25,6 +25,7 @@ const INITIAL_STATE = {
     channel: "",
     financialAid: false,
     prevParticipation: false,
+    paymentCheck: false,
 }
 
 const range = (start, end) => {
@@ -88,7 +89,8 @@ class ApplicationBase extends React.Component {
     onSubmit = event => {
         const uid = this.props.firebase.auth.currentUser.uid;
         this.props.firebase.userApplication(uid).set({
-            ...this.state
+            ...this.state,
+            lastUpdate: (new Date()).toTimeString(),
         })
     }
 
@@ -103,6 +105,9 @@ class ApplicationBase extends React.Component {
             <h1>ICISTS 2019 Application</h1>
             <form onSubmit={this.onSubmit}>
                 <div className="app-name">
+                    <h3>
+                        Personal Information
+                    </h3>
                     <div className="row">
                         <div className="col-md-2">
                             First Name
@@ -202,6 +207,9 @@ class ApplicationBase extends React.Component {
                     </div>
                 </div>
                 <hr/>
+                <h3>
+                    Group Participatioin
+                </h3>
                 <div className="row">
                     <div className="col-md-1">
                         <div className="app-group-check-box">
@@ -226,6 +234,7 @@ class ApplicationBase extends React.Component {
                         <div>
                             <div className="app-group-name">
                                 <input
+                                    disabled={!this.state.groupState}
                                     name="groupName"
                                     value={this.state.groupName}
                                     onChange={this.onChange}
@@ -237,6 +246,9 @@ class ApplicationBase extends React.Component {
                     </div>
                 </div>
                 <hr/>
+                <h3>
+                    Contact
+                </h3>
                 <div className="row">
                     <div className="col-md-1">
                         <label htmlFor="app-email-select">Email</label>
@@ -255,6 +267,9 @@ class ApplicationBase extends React.Component {
                     </div>
                 </div>
                 <hr/>
+                <h3>
+                    Agreements & Supports
+                </h3>
                 <div className="row">
                     <div className="col-6">
                         <div className="app-provision">
@@ -317,6 +332,25 @@ class ApplicationBase extends React.Component {
                 </div>
                 <hr/>
                 <div className="row">
+                    <div className="col-md-4">
+                        Your payment is verified
+                    </div>
+                    <div className="col-md-2">
+                        <input
+                        disabled
+                        name="paymentCheck"
+                        className="app-payment-check-check"
+                        onChange={this.onChange}
+                        type="checkbox"
+                        checked={this.state.paymentCheck}
+                        value={this.state.paymentCheck} />
+                    </div>
+                    <div className="col-md-6">
+                        If you have any concern about payment, please contact us.
+                    </div>
+                </div>
+                <hr />
+                <div className="row">
                     <div className="col">
                         Essay
                     </div>
@@ -333,22 +367,35 @@ class ApplicationBase extends React.Component {
                 </div>
                 <hr/>
                 <div className="app-channel">
-                    <label htmlFor="app-channel-select">
-                        How did you know about ICISTS?
-                    </label>
-                    <select
-                        name="channel"
-                        className="app-channel-select"
-                        onChange={this.onChange}
-                        value={this.state.channel} >
-                        <option value="" disabled selected>I've heard about ICISTS from...</option>
-                        {this.options.channels}
-                    </select>
+                    <div className="row">
+                        <div className="col-md-8">
+                            <label htmlFor="app-channel-select">
+                                How did you know about ICISTS?
+                            </label>
+                        </div>
+                        <div className="col-md-4">
+                            <select
+                            name="channel"
+                            className="app-channel-select"
+                            onChange={this.onChange}
+                            value={this.state.channel} >
+                                <option value="" disabled selected>I've heard about ICISTS from...</option>
+                                {this.options.channels}
+                        </select>
+                        </div>
+                    </div>
                 </div>
                 <div className="app-save">
-                    <button type="submit">
-                        Save
-                    </button>
+                    <div className="row">
+                            <div className="col-md-4">
+                                <button type="submit">
+                                    Save
+                                </button>
+                            </div>
+                            <div className="col-md-8">
+                                Your application is saved at {this.state.lastUpdate}
+                            </div>
+                    </div>
                 </div>
             </form>
             </div>
