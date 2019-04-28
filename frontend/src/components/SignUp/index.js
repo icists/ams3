@@ -25,6 +25,7 @@ const INITIAL_STATE = {
     email: '',
     passwordOne: '',
     passwordTwo: '',
+    verificationSent: false,
     error: null,
   };
 
@@ -48,6 +49,9 @@ class SignUpFormBase extends React.Component {
                 });
             })
             .then(() => {
+                this.setState({
+                    verificationSent: true,
+                })
                 return this.props.firebase.doSendEmailVerification();
             })
             .then(authUser => {
@@ -146,6 +150,11 @@ class SignUpFormBase extends React.Component {
                 </div>
                 <div className="col-md-4"></div>
             </div>
+                    {this.state.verificationSent
+                        ?   <div className="alert alert-success">
+                            Verification Email is sent! Please check your email and verify your account.
+                            </div>
+                        : <div></div>}
             {error && 
                 <div className="row">
                 <div className="col-md-3"></div>
