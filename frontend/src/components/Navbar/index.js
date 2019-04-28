@@ -35,10 +35,10 @@ class Navigation extends Component {
   }
   render() {
     return(
-      <div>
+      <div className="main-navbar">
     <Navbar light expand="md">
       <Link to={ROUTES.HOME} className="navbar-brand">
-      <img src={logo} height="30" alt="icists logo"/>
+      <img src={logo} alt="icists logo"/>
       </Link>
       <NavbarToggler onClick={this.toggle} />
       <Collapse isOpen={this.state.isOpen} navbar>

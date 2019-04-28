@@ -27,6 +27,17 @@ code {
 .navbar a{
   color: white;
 }
+.main-navbar img{
+  margin-left: 10px;
+  height: 40px;
+}
+.main-navbar li{
+  font-size: 17px;
+}
+.main-navbar .signout-btn{
+  margin-left: 5px;
+  margin-top: 3px;
+}
 
 /* signin */
 .sign-in{
@@ -146,7 +157,7 @@ code {
 /* Promo */
 #promo{
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./assets/img/slide2.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(./assets/img/slide2.jpg);
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -491,14 +502,17 @@ code {
 
 /* email-verify */
 .email-verify{
- margin-bottom: 300px;
+  margin-top: 200px;
+  margin-bottom: 250px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   margin-left: auto;
   color: black;
   text-align: center;
 }
 .email-verify p{
   font-size: 15px;
-  margin-top: 125px;
+  /* margin-top: 125px; */
   margin-bottom: 30px;
 }
 .email-verify-btn {
