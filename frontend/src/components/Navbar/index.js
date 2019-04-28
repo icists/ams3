@@ -37,9 +37,9 @@ class Navigation extends Component {
     return(
       <div>
     <Navbar light expand="md">
-      <NavbarBrand href="/">
+      <Link to={ROUTES.HOME} className="navbar-brand">
       <img src={logo} height="30" alt="icists logo"/>
-      </NavbarBrand>
+      </Link>
       <NavbarToggler onClick={this.toggle} />
       <Collapse isOpen={this.state.isOpen} navbar>
           <AuthUserContext.Consumer>

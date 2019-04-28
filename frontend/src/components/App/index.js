@@ -10,6 +10,7 @@ import Dashboard from '../Dashboard';
 import AccountPage from '../Account';
 import ApplicationPage from "../Application";
 import Footer from '../Footer'
+import Event from '../Event'
 
 import * as ROUTES from "../../constants/routes";
 import { withAuthentication } from "../Session"
@@ -27,6 +28,7 @@ const App = () => (
                     <Route path={ROUTES.APPLICATION} component={ApplicationPage} />
                     <Route path={ROUTES.DASHBOARD} component={Dashboard} />
                     <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+                    <Route path={ROUTES.EVENT} component={Event} />
                 </Switch>
                 <Footer />
                 </div>
