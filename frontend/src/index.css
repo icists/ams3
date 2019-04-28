@@ -4,7 +4,7 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Roboto', sans-serif;
 
   -webkit-font-smoothing: antialiased ;
   -moz-osx-font-smoothing: grayscale;
@@ -157,7 +157,7 @@ code {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
-  font-family: sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 55px;
 }
 #promo button{
