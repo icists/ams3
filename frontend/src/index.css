@@ -227,7 +227,7 @@ code {
   color: #efefef !important;
   background-attachment: fixed;
   text-align: center;
-  padding: 30px;
+  padding: 60px;
 }
 #icists-2019 h2{
   margin-top: 30px;
@@ -248,6 +248,9 @@ code {
   margin: 20px auto;
   font-size: 15px;
   line-height: 30px; 
+}
+#icists-2019 .poster{
+  margin-bottom: 150px;
 }
 
 /* moreinfo */
