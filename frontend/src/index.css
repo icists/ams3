@@ -311,6 +311,10 @@ code {
 .app-contact h3{
   margin: 20px auto;
 }
+
+.app-contact p{
+  padding: 8px;
+}
 .app-as{
   margin: 20px auto;
 }
@@ -360,6 +364,10 @@ code {
   background: #f1f1f1b3;
   border-radius: 10px;
   margin: 7px auto;
+}
+
+.application label{
+  padding: 6px;
 }
 
 /* account */
