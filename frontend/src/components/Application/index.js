@@ -56,7 +56,8 @@ class ApplicationBase extends React.Component {
         }
 
         this.state = {
-            ...INITIAL_STATE
+            ...INITIAL_STATE,
+            ableToSave: true,
         };
 
         this.props.firebase
@@ -78,11 +79,19 @@ class ApplicationBase extends React.Component {
         const target = event.target;
         const name = target.name;
         let value = target.value;
+        let isEmailValid = true;
         if (target.type === "checkbox") {
             value = target.checked
         }
+        if (target.name === "notification_email") {
+            if (!this.validateEmail(value)) {
+                isEmailValid = false;
+            }
+        }
+        console.log(isEmailValid);
         this.setState({
-            [name]: value
+            [name]: value,
+            ableToSave: isEmailValid,
         });
     }
     
@@ -103,39 +112,46 @@ class ApplicationBase extends React.Component {
         return (
             <div className="application">
             <h1>ICISTS 2019 Application</h1>
+            <div className="form-group">
             <form onSubmit={this.onSubmit}>
                 <div className="app-name">
                     <h3>
                         Personal Information
                     </h3>
-                    <div className="row">
-                        <div className="col-md-2">
-                            First Name
-                        </div>
-                        <div className="col-md-4">
+                        <div className="row">
+                            <div className="col-md-2">
+                                <label for="app-name-first-input">
+                                    First Name
+                                </label>
+                            </div>
+                            <div className="col-md-4">
                                 <input
-                                    className="app-name-first-input w-100"
+                                    className="app-name-first-input w-100 form-control"
+                                    id="app-name-first-input"
                                     name="nameFirst"
                                     value={this.state.nameFirst}
                                     onChange={this.onChange}
                                     type="text"
                                     placeholder="First Name"
                                 />
+                            </div>
+                            <div className="col-md-2">
+                                <label for="app-name-last-input">
+                                    Last Name
+                                </label>
+                            </div>
+                            <div className="col-md-4">
+                                    <input
+                                        className="app-name-last-input w-100 form-control"
+                                        id="app-name-last-input"
+                                        name="nameLast"
+                                        value={this.state.nameLast}
+                                        onChange={this.onChange}
+                                        type="text"
+                                        placeholder="Last Name"
+                                    />
+                            </div>
                         </div>
-                        <div className="col-md-2">
-                            Last Name
-                        </div>
-                        <div className="col-md-4">
-                                <input
-                                    className="app-name-last-input w-100"
-                                    name="nameLast"
-                                    value={this.state.nameLast}
-                                    onChange={this.onChange}
-                                    type="text"
-                                    placeholder="Last Name"
-                                />
-                        </div>
-                    </div>
                 </div>
                 <div className="app-sex-age">                
                     <div className="row">
@@ -145,7 +161,7 @@ class ApplicationBase extends React.Component {
                         <div className="col-md-4">
                             <select
                                 name="sex"
-                                className="app-sex-select w-100"
+                                className="app-sex-select w-100 form-control"
                                 onChange={this.onChange}
                                 value={this.state.sex} >
                                 <option value="" disabled selected>Your Sex</option>
@@ -158,7 +174,7 @@ class ApplicationBase extends React.Component {
                         <div className="col-md-4">
                             <select
                                 name="age"
-                                className="app-age-select w-100"
+                                className="app-age-select w-100 form-control"
                                 onChange={this.onChange}
                                 value={this.state.age}>
                                 {this.options.ages}
@@ -172,7 +188,7 @@ class ApplicationBase extends React.Component {
                             <div className="app-nationality">
                                 <label htmlFor="app-nationality-select">Nationality</label>
                                 <select
-                                    className="app-nationality-select w-100"
+                                    className="app-nationality-select w-100 form-control"
                                     name="nationality"
                                     value={this.state.nationality}
                                     data-live-search="true"
@@ -189,17 +205,19 @@ class ApplicationBase extends React.Component {
                                     name="school"
                                     value={this.state.school}
                                     onChange={this.onChange}
-                                    className="app-school-select w-100" >
+                                    className="app-school-select w-100 form-control" >
                                     <option value="" disabled selected>Select your school</option>
                                     {this.options.schools}
                                 </select>
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <div className="app-major">
-                                Major
+                        <div className="app-major">
+                                <label>
+                                    Major
+                                </label>
                                 <input
-                                    className="app-major-input w-100"
+                                    className="app-major-input w-100 form-control"
                                     name="major"
                                     value={this.state.major}
                                     onChange={this.onChange}
@@ -221,7 +239,7 @@ class ApplicationBase extends React.Component {
                             <div className="app-group-check-box">
                                 <input
                                     name="groupState"
-                                    className="app-group-check"
+                                    className="app-group-check form-control"
                                     type="checkbox"
                                     onChange={this.onChange}
                                     checked={this.state.groupState}
@@ -233,13 +251,14 @@ class ApplicationBase extends React.Component {
                                 Are you participating in a group?
                             </label>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-2">
                             Group Name
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-4">
                             <div>
                                 <div className="app-group-name">
                                     <input
+                                        className="app-group-name-input form-control"
                                         disabled={!this.state.groupState}
                                         name="groupName"
                                         value={this.state.groupName}
@@ -263,7 +282,7 @@ class ApplicationBase extends React.Component {
                         </div>
                         <div className="col-md-5">
                             <input
-                                className="app-email-select w-100"
+                                className="app-email-select w-100 form-control"
                                 name="notification_email"
                                 value={this.state.notification_email}
                                 onChange={this.onChange}
@@ -271,7 +290,14 @@ class ApplicationBase extends React.Component {
                                 type="email"/>
                         </div>
                         <div className="col-md-6">
-                            We will send you information email via this address.
+                            <p className="text-center">
+                                <div className="app-contact-email-invalid-email">
+                                    { !this.state.ableToSave ? "Please check your email!" : "" }
+                                </div>
+                                <div className="app-contact-email-info">
+                                    We will send you information email via this address.
+                                </div>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -285,7 +311,7 @@ class ApplicationBase extends React.Component {
                             <div className="app-provision">
                                 <input
                                     name="provision"
-                                    className="app-provision-check"
+                                    className="app-provision-check form-control"
                                     onChange={this.onChange}
                                     type="checkbox"
                                     checked={this.state.provision}
@@ -301,7 +327,7 @@ class ApplicationBase extends React.Component {
                             <div className="app-prev-participation">
                                 <input
                                     name="prevParticipation"
-                                    className="app-prev-participation-check"
+                                    className="app-prev-participation-check form-control"
                                     onChange={this.onChange}
                                     type="checkbox"
                                     checked={this.state.prevParticipation}
@@ -319,7 +345,7 @@ class ApplicationBase extends React.Component {
                             <div className="app-visa">
                                 <input
                                     name="visa"
-                                    className="app-visa-check"
+                                    className="app-visa-check form-control"
                                     onChange={this.onChange}
                                     type="checkbox"
                                     checked={this.state.visa}
@@ -335,7 +361,7 @@ class ApplicationBase extends React.Component {
                             <div className="app-financial-aid">
                                 <input
                                     name="financialAid"
-                                    className="app-financial-aid-check"
+                                    className="app-financial-aid-check form-control"
                                     onChange={this.onChange}
                                     type="checkbox"
                                     checked={this.state.financialAid}
@@ -362,7 +388,7 @@ class ApplicationBase extends React.Component {
                             <input
                             disabled
                             name="paymentCheck"
-                            className="app-payment-check-check"
+                            className="app-payment-check-check form-control"
                             onChange={this.onChange}
                             type="checkbox"
                             checked={this.state.paymentCheck}
@@ -402,7 +428,7 @@ class ApplicationBase extends React.Component {
                         <div className="col-md-4">
                             <select
                             name="channel"
-                            className="app-channel-select"
+                            className="app-channel-select form-control"
                             onChange={this.onChange}
                             value={this.state.channel} >
                                 <option value="" disabled selected>I've heard about ICISTS from...</option>
@@ -417,14 +443,15 @@ class ApplicationBase extends React.Component {
                                 <p className="text-center">Your application is saved at {this.state.lastUpdate}</p>
                             </div>
                             <div className="col-md-2">
-                                <button type="submit" className="btn btn-primary w-100">
+                                <button disabled={!this.state.ableToSave} type="submit" className="btn btn-primary w-100">
                                     Save
                                 </button>
                             </div>
                             <div className="col-md-auto"></div>
                     </div>
                 </div>
-            </form>
+                </form>
+                </div>
             </div>
         );
     }
