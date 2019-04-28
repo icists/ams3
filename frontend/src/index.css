@@ -236,7 +236,7 @@ code {
 }
 #icists-2019 img{
   width: 80%;
-  margin: 30px auto;
+  margin-top: 30px;
 }
 #icists-2019 h4{
   margin-top: 30px;
@@ -245,7 +245,7 @@ code {
 }
 #icists-2019 p{
   text-align: justify;
-  margin: 20px auto;
+  margin: 40px auto;
   font-size: 15px;
   line-height: 30px; 
 }
