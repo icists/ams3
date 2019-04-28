@@ -24,7 +24,7 @@ const withEmailVerification = Component => {
             <AuthUserContext.Consumer>
                 {authUser =>
                     needsEmailVerification(authUser) ? (
-                        <div className="email-verify">
+                        <div className="email-verify alert alert-info">
                             <div className="row">
                                 <div className="col-md-3"></div>
                                 <div className="col-md-6">

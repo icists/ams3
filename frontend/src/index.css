@@ -502,14 +502,17 @@ code {
 
 /* email-verify */
 .email-verify{
- margin-bottom: 300px;
+  margin-top: 200px;
+  margin-bottom: 250px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   margin-left: auto;
   color: black;
   text-align: center;
 }
 .email-verify p{
   font-size: 15px;
-  margin-top: 125px;
+  /* margin-top: 125px; */
   margin-bottom: 30px;
 }
 .email-verify-btn {
