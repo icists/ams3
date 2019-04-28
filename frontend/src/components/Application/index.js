@@ -292,7 +292,7 @@ class ApplicationBase extends React.Component {
                         <div className="col-md-6">
                             <p className="text-center">
                                 <div className="app-contact-email-invalid-email">
-                                    { !this.state.ableToSave ? "Please check your email!" : "" }
+                                    { !this.state.ableToSave ? <div className="app-email-alert alert alert-danger">Please check your email!</div> : "" }
                                 </div>
                                 <div className="app-contact-email-info">
                                     We will send you information email via this address.
