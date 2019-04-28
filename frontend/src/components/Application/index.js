@@ -1,4 +1,5 @@
 import React from "react";
+import Select from "react-select";
 
 import { withAuthorization, withEmailVerification } from "../Session";
 import { withFirebase } from "../Firebase";
@@ -38,12 +39,11 @@ class ApplicationBase extends React.Component {
         super(props);
 
         this.options = {
-            countries: countryList().getData().map(element => (
-                <option value={element.label}>{element.label}</option>
-            )),
-            schools: schoolOptions.map(element => (
-                <option value={element.name}>({element.country_code}) {element.name}</option>
-            )),
+            countries: countryList().getData(),
+            schools: schoolOptions.map(element => ({
+                value: element.name,
+                label: `(${element.country_code}) ${element.name}`
+            })),
             genders: genderOptions.map(element => (
                 <option value={element.text}>{element.text}</option>
             )),
@@ -88,11 +88,24 @@ class ApplicationBase extends React.Component {
                 isEmailValid = false;
             }
         }
-        console.log(isEmailValid);
         this.setState({
             [name]: value,
             ableToSave: isEmailValid,
         });
+    }
+
+    onNationalitySelectionChange = nationalityOption => {
+        this.setState({
+            nationality: nationalityOption,
+        })
+
+    }
+
+    onSchoolSelectionChange = schoolOption => {
+        this.setState({
+            school: schoolOption,
+        })
+
     }
     
     onSubmit = event => {
@@ -187,28 +200,23 @@ class ApplicationBase extends React.Component {
                         <div className="col-md-4">
                             <div className="app-nationality">
                                 <label htmlFor="app-nationality-select">Nationality</label>
-                                <select
-                                    className="app-nationality-select w-100 form-control"
+                                <Select
+                                    className="app-nationality-select w-100"
                                     name="nationality"
+                                    options={this.options.countries}
                                     value={this.state.nationality}
-                                    data-live-search="true"
-                                    onChange={this.onChange} >
-                                    <option value="" disabled selected>Select your country</option>
-                                    {this.options.countries}
-                                </select>
+                                    onChange={this.onNationalitySelectionChange} />
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="app-school">
                                 <label htmlFor="app-school-select">School</label>
-                                <select
+                                <Select
                                     name="school"
+                                    className="app-school-select w-100"
                                     value={this.state.school}
-                                    onChange={this.onChange}
-                                    className="app-school-select w-100 form-control" >
-                                    <option value="" disabled selected>Select your school</option>
-                                    {this.options.schools}
-                                </select>
+                                    options={this.options.schools}
+                                    onChange={this.onSchoolSelectionChange} />
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -228,7 +236,6 @@ class ApplicationBase extends React.Component {
                         </div>
                     </div>
                 </div>
-                
                 <hr/>
                 <div className="app-group">
                     <h3>
