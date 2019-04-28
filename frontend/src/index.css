@@ -157,7 +157,7 @@ code {
 /* Promo */
 #promo{
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./assets/img/slide2.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(./assets/img/slide2.jpg);
   background-size: cover;
   background-position: center;
   color: #fff;
