@@ -5,7 +5,7 @@ const Footer = () => {
         <section id="footer">
             <div className="container text-center">
                 <p>Copyright @ 2019 Div. Tech & Design</p>
-                <p>Made With<i class="far fa-heart"></i> Bongjun & Seungho</p>
+                <p>Made With<i className="far fa-heart"></i> Bongjun & Seungho</p>
             </div>
         </section>
     )

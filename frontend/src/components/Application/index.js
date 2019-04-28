@@ -27,6 +27,7 @@ const INITIAL_STATE = {
     financialAid: false,
     prevParticipation: false,
     paymentCheck: false,
+    otherChannel: "",
 }
 
 const range = (start, end) => {
@@ -57,6 +58,7 @@ class ApplicationBase extends React.Component {
 
         this.state = {
             ...INITIAL_STATE,
+            schoolCountryCode: "",
             ableToSave: true,
         };
 
@@ -98,14 +100,17 @@ class ApplicationBase extends React.Component {
         this.setState({
             nationality: nationalityOption,
         })
-
     }
 
     onSchoolSelectionChange = schoolOption => {
         this.setState({
             school: schoolOption,
         })
-
+    }
+    onSchoolCountrySelectionChange = schoolCountryOption => {
+        this.setState({
+            schoolCountryCode: schoolCountryOption,
+        })
     }
     
     onSubmit = event => {
@@ -133,7 +138,7 @@ class ApplicationBase extends React.Component {
                     </h3>
                         <div className="row">
                             <div className="col-md-2">
-                                <label for="app-name-first-input">
+                                <label htmlFor="app-name-first-input">
                                     First Name
                                 </label>
                             </div>
@@ -149,7 +154,7 @@ class ApplicationBase extends React.Component {
                                 />
                             </div>
                             <div className="col-md-2">
-                                <label for="app-name-last-input">
+                                <label htmlFor="app-name-last-input">
                                     Last Name
                                 </label>
                             </div>
@@ -220,7 +225,7 @@ class ApplicationBase extends React.Component {
                             </div>
                         </div>
                         <div className="col-md-4">
-                        <div className="app-major">
+                            <div className="app-major">
                                 <label>
                                     Major
                                 </label>
@@ -443,6 +448,18 @@ class ApplicationBase extends React.Component {
                         </select>
                         </div>
                     </div>
+                        {this.state.channel === "Other" ?
+                            <div className="row">
+                                    <input
+                                    className="app-channel-other form-control"
+                                    name="otherChannel"
+                                    value={this.state.otherChannel}
+                                    onChange={this.onChange}
+                                    type="text"
+                                    placeholder="How did you know about ICISTS?"
+                                    />
+                            </div>
+                        : <div></div>}
                 </div>
                 <div className="app-save">
                     <div className="app-alert row alert alert-primary">
