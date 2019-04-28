@@ -13,9 +13,12 @@ const AccountPage = () => (
                 <h1>
                     Account
                 </h1>
+                <div className="alert alert-info account-alert">
                 <h3>
                     Account Email : { authUser.email }
                 </h3>
+                </div>
+
                 <PasswordChangeForm />
             </div>
         )}
