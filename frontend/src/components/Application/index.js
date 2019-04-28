@@ -412,7 +412,7 @@ class ApplicationBase extends React.Component {
                     </div>
                 </div>
                 <div className="app-save">
-                    <div className="row">
+                    <div className="app-alert row alert alert-primary">
                             <div className="col-md-9">
                                 <p className="text-center">Your application is saved at {this.state.lastUpdate}</p>
                             </div>

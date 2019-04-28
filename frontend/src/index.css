@@ -339,7 +339,14 @@ code {
   margin: 40px auto;
 }
 .app-save{
-  margin-bottom: 300px;
+  margin: 30px auto;
+  font-size: 20px;
+}
+.app-alert{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
 .application input{
   width: 100%;
