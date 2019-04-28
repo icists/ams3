@@ -28,7 +28,8 @@ code {
   color: white;
 }
 .main-navbar img{
-  height: 35px;
+  margin-left: 10px;
+  height: 40px;
 }
 .main-navbar li{
   font-size: 17px;
