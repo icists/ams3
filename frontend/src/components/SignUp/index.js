@@ -9,12 +9,12 @@ const SignUpPage = () => {
     return (
         <div className="container sign-up">
             <div className="row">
-                <div className="col-sm-12 align-self-center">
+            <div className="col-sm-12 align-self-center">
                 <div className="sign-up-head text-uppercase">
                 <h1>Sign Up</h1>
                 </div>
                 <SignUpForm/>
-                </div>
+            </div>
             </div>
         </div>
     );
@@ -88,8 +88,8 @@ class SignUpFormBase extends React.Component {
             <div className="sign-up-form">
             <form onSubmit={this.onSubmit}>
             <div className="row">
-            <div className="col-4"></div>
-            <div className="tbox col-4">
+            <div className="col-md-4"></div>
+            <div className="tbox col-md-4">
             <input
                 name="username"
                 value={username}
@@ -98,11 +98,11 @@ class SignUpFormBase extends React.Component {
                 placeholder="User Name"
                 />
             </div>
-            <div className="col-4"></div>
+            <div className="col-md-4"></div>
             </div>
             <div className="row">
-                <div className="col-4"></div>
-                <div className="tbox col-4">
+                <div className="col-md-4"></div>
+                <div className="tbox col-md-4">
                 <input
                 name="email"
                 value={email}
@@ -111,11 +111,11 @@ class SignUpFormBase extends React.Component {
                 placeholder="Email Address"
                 />
                 </div>
-                <div className="col-4"></div>
+                <div className="col-md-4"></div>
             </div>
             <div className="row">
-                <div className="col-4"></div>
-                <div className="col-4 tbox">
+                <div className="col-md-4"></div>
+                <div className="col-md-4 tbox">
                 <input
                 name="passwordOne"
                 value={passwordOne}
@@ -124,11 +124,11 @@ class SignUpFormBase extends React.Component {
                 placeholder="Password"
                 />
                 </div>
-                <div className="col-4"></div>
+                <div className="col-md-4"></div>
             </div>
             <div className="row">
-                <div className="col-4"></div>
-                <div className="col-4 tbox">
+                <div className="col-md-4"></div>
+                <div className="col-md-4 tbox">
                 <input
                 name="passwordTwo"
                 value={passwordTwo}
@@ -137,23 +137,23 @@ class SignUpFormBase extends React.Component {
                 placeholder="Confirm Password"
                 />
                 </div>
-                <div className="col-4"></div>
+                <div className="col-md-4"></div>
             </div>
             <div className="row">
-                <div className="col-4"></div>
-                <div className="col-4">
+                <div className="col-md-4"></div>
+                <div className="col-md-4">
                 <button disabled={isInvalid} class="sign-up-btn btn btn-primary" type="submit">Sign Up</button>
                 </div>
-                <div className="col-4"></div>
+                <div className="col-md-4"></div>
             </div>
             {error && 
                 <div className="row">
-                <div className="col-sm-3"></div>
-                <div className="col-sm-6 sign-up-alert">
+                <div className="col-md-3"></div>
+                <div className="col-md-6 sign-up-alert">
                 <div class="alert alert-danger" role="alert">
                 {error.message}
                 </div>
-                <div className="col-sm-3"></div>
+                <div className="col-md-3"></div>
                 </div>
                 </div>}
             </form>

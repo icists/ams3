@@ -64,8 +64,8 @@ class SignInFormBase extends Component {
       <div className="sign-in-form">
       <form onSubmit={this.onSubmit}>
       <div className="row">
-        <div className="col-4"></div>
-        <div className="tbox col-4">
+        <div className="col-md-4"></div>
+        <div className="tbox col-md-4">
         <input
           name="email"
           value={email}
@@ -74,12 +74,12 @@ class SignInFormBase extends Component {
           placeholder="Email Address"
         />
         </div>
-        <div className="col-4"></div>
+        <div className="col-md-4"></div>
 
       </div>
       <div className="row">
-        <div className="col-4"></div>
-        <div className="tbox col-4">
+        <div className="col-md-4"></div>
+        <div className="tbox col-md-4">
         <input
           name="password"
           value={password}
@@ -88,11 +88,11 @@ class SignInFormBase extends Component {
           placeholder="Password"
         />
         </div>
-        <div className="col-4"></div>
+        <div className="col-md-4"></div>
       </div>
       <div className="row">
-        <div className="col-4"></div>
-        <div className="col-4">
+        <div className="col-md-4"></div>
+        <div className="col-md-4">
         <button disabled={isInvalid} class="sign-in-btn btn btn-primary" type="submit">
           Sign In
         </button>
@@ -100,12 +100,12 @@ class SignInFormBase extends Component {
       </div>
       {error && 
         <div className="row">
-        <div className="col-sm-3"></div>
-        <div className="col-sm-6 sign-in-alert">
+        <div className="col-md-3"></div>
+        <div className="col-md-6 sign-in-alert">
         <div class="alert alert-danger" role="alert">
           {error.message}
         </div>
-        <div className="col-sm-3"></div>
+        <div className="col-md-3"></div>
         </div>
         </div>}
       </form>

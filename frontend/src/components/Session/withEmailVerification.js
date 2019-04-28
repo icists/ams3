@@ -24,26 +24,39 @@ const withEmailVerification = Component => {
             <AuthUserContext.Consumer>
                 {authUser =>
                     needsEmailVerification(authUser) ? (
-                        <div>
-                            {this.state.isSent ? (
+                        <div className="email-verify">
+                            <div className="row">
+                                <div className="col-md-3"></div>
+                                <div className="col-md-6">
+                                {this.state.isSent ? (
                                 <p>
                                 E-Mail confirmation sent: Check you E-Mails (Spam
                                 folder included) for a confirmation E-Mail.
                                 Refresh this page once you confirmed your E-Mail.
                                 </p>
-                            ) : (
-                                <p>
-                                Verify your E-Mail: Check you E-Mails (Spam folder
-                                included) for a confirmation E-Mail or send
-                                another confirmation E-Mail.
-                                </p>
-                            )}
-                            <button
+                                ) : (
+                                    <p>
+                                    Verify your E-Mail: Check you E-Mails (Spam folder
+                                    included) for a confirmation E-Mail or send
+                                    another confirmation E-Mail.
+                                    </p>
+                                )}
+                                </div>
+                                <div className="col-md-3"></div>
+                            </div>
+                            <div className="row">
+                                <div className="col-md-3"></div>
+                                <div className="col-md-6">
+                                <button
                                 type="button"
+                                className="email-verify-btn btn btn-primary text-uppercase"
                                 onClick={this.onSendEmailVerification}
                                 disabled={this.state.isSent} >
                                 Send confirmation E-Mail
-                            </button>
+                                </button>
+                                </div>
+                                <div className="col-md-3"></div>
+                            </div>
                         </div>
                     ) : (
                 <Component {...this.props} />
