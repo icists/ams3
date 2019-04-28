@@ -27,6 +27,16 @@ code {
 .navbar a{
   color: white;
 }
+.main-navbar img{
+  height: 35px;
+}
+.main-navbar li{
+  font-size: 17px;
+}
+.main-navbar .signout-btn{
+  margin-left: 5px;
+  margin-top: 3px;
+}
 
 /* signin */
 .sign-in{
