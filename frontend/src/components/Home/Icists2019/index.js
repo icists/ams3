@@ -7,9 +7,9 @@ export class Icists2019 extends Component {
     return (
       <div id="icists-2019">
         <div className="row">
-          <div className="col-1"></div>
-          <div className="col-10">
-            <h2 className="text-uppercase font-weight-bold">About ICISTS 2019</h2>
+          <div className="col-lg-1"></div>
+          <div className="col-lg-10">
+          <h2 className="text-uppercase font-weight-bold">About ICISTS 2019</h2>
             <img src={poster} className="poster" alt=""/>
             <h2 className="text-uppercase font-weight-bold">The Art of Science: Expression</h2>
             <img src={topicimg} alt=""/>
@@ -21,7 +21,7 @@ export class Icists2019 extends Component {
             <p>ICISTS 2019 seeks to paint a new image for science by meeting those who express science beyond labs and papers. </p>
             </div>
           </div>
-          <div className="col-auto"></div>
+          <div className="col-lg-1"></div>
         </div>
       </div>
     )
