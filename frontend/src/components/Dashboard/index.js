@@ -22,7 +22,7 @@ class DashboardBase extends React.Component {
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <div>
                 <div className="dashboard-application">

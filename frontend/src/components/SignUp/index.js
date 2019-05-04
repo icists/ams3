@@ -59,8 +59,9 @@ class SignUpFormBase extends React.Component {
                 this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
-                if (error != undefined)
+                if (error !== undefined) {
                     alert(error.message);
+                }
                 this.setState({ error });
             });
         

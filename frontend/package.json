@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/firebase": "^3.2.1",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.8.16",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-select": "^2.0.17",
+    "@types/recompose": "^0.30.6",
     "bootstrap": "^4.3.1",
     "bootstrap-select": "^1.13.10",
     "dotenv": "^7.0.0",
@@ -12,21 +18,22 @@
     "react-autocomplete-input": "^1.0.10",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
+    "react-scripts-ts": "^3.1.0",
     "react-select": "^2.4.3",
     "react-select-country-list": "^1.0.7",
     "react-timestamp": "^5.0.0",
     "reactstrap": "^8.0.0",
     "recompose": "^0.30.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.86.0"
+    "semantic-ui-react": "^0.86.0",
+    "typescript": "^3.4.5"
   },
   "scripts": {
-    "deploy": "react-scripts build && firebase deploy",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "react-scripts-ts build && firebase deploy",
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test",
+    "eject": "react-scripts-ts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

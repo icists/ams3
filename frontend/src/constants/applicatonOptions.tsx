@@ -1,18 +1,20 @@
+import { Sex } from "../components/Application/interface";
+
 const genderOptions = [
     {
         key: "Male",
         text: "Male",
-        value: "Male"
+        value: Sex.Male
     },
     {
         key: "Female",
         text: "Female",
-        value: "Female",
+        value: Sex.Female
     },
     {
         key: "Other",
         text: "Other",
-        value: "Other"
+        value: Sex.Other
     },
 ];
 
