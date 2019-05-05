@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return(
         <section id="footer">
             <div className="container text-center">
-                <p>Copyright @ 2019 Div. Tech & Design</p>
-                <p>Made With<i className="far fa-heart"></i> Bongjun & Seungho</p>
+                <p>N13-1, KAIST 291 DAEHAK-RO, YUSEONG-GU, DAEJEON, KOREA</p>
+                <p>Copyright @ 2019 <a href="https://github.com/icists/ams3" target="_blank">Div. Tech & Design</a></p>
             </div>
         </section>
     )

@@ -36,7 +36,7 @@ class Navigation extends Component {
   render() {
     return(
       <div className="main-navbar">
-    <Navbar light expand="md">
+    <Navbar light className="navbar-expand-lg" expand="md">
       <Link to={ROUTES.HOME} className="navbar-brand">
       <img src={logo} alt="icists logo"/>
       </Link>
