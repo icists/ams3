@@ -200,16 +200,15 @@ class ApplicationBase extends React.Component<
                           </select>
                       </div>
                       <div className="col-md-2">
-                          <label htmlFor="app-age-select">Age</label>
+                          <label htmlFor="app-age-select">Date of Birth</label>
                       </div>
                       <div className="col-md-4">
-                          <select
+                          <input
                               name="age"
                               className="app-age-select w-100 form-control"
+                              placeholder="MM/DD/YYYY"
                               onChange={this.onChange}
-                              value={this.state.birthDate}>
-                              {this.options.ages}
-                          </select>
+                              value={this.state.birthDate} />
                       </div>
                   </div>
               </div>
@@ -257,7 +256,7 @@ class ApplicationBase extends React.Component<
               <hr/>
               <div className="app-group">
                   <h3>
-                      Group Participatioin
+                      Group Participation
                   </h3>
                   <div className="row">
                       <div className="col-md-1">
@@ -273,7 +272,7 @@ class ApplicationBase extends React.Component<
                       </div>
                       <div className="col-md-5">
                           <label className="app-group-check-label" htmlFor="app-group-check">
-                              Are you participating in a group?
+                              Check if you are participating as a group
                           </label>
                       </div>
                       <div className="col-md-2">
@@ -346,7 +345,7 @@ class ApplicationBase extends React.Component<
                       </div>
                       <div className="col-md-5">
                           <label className="app-provision-check-label" htmlFor="app-provision-check">
-                              Do you agree with the provision?
+                              Check if you agree with the provision
                           </label>    
                       </div>
                       <div className="col-md-1">
@@ -363,7 +362,7 @@ class ApplicationBase extends React.Component<
                       </div>
                       <div className="col-md-5">
                           <label className="app-prev-participation-check" htmlFor="app-prev-participation-check">
-                              Have you participated ICISTS before?
+                              Check if you have participated ICISTS before
                           </label>
                       </div>
                   </div>
@@ -382,7 +381,7 @@ class ApplicationBase extends React.Component<
                       </div>
                       <div className="col-md-5">
                           <label className="app-visa-check-label" htmlFor="app-visa-check">
-                              Do you need a support for visa?
+                              Check if you need a visa supporting letter to enter South Korea
                           </label>
                       </div>
                       <div className="col-md-1">
@@ -399,7 +398,9 @@ class ApplicationBase extends React.Component<
                       </div>
                       <div className="col-md-5">
                           <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
-                              Do you need financial aid?
+                              Check if you are applying for financial aid
+                              <br />
+                              <small>You have to write an essay to apply this</small>
                           </label>
                       </div>
                   </div>
