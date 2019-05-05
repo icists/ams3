@@ -1,42 +1,37 @@
 import { ValueType } from 'react-select/lib/types';
 
-export enum Sex { Male, Female, Other };
-
 // Interface storing Application Form Informations
 export interface IApplicationForm {
     // Personal Informations
-    nameFirst: string;
-    nameLast: string;
-    sex?: Sex;
+    nameFirst?: string;
+    nameLast?: string;
+    sex?: string;
     birthDate?: string;
     nationality?: ValueType<JSX.Element>;
-    school: ValueType<{
-        value: string;
-        label: string;
-    }>;
-    major: string;
+    school?: string;
+    major?: string;
 
     // Contact
-    phoneNumber: string;
-    notificationEmail: string;
+    phoneNumber?: string;
+    notificationEmail?: string;
 
-    essay: string;
+    essay?: string;
 
     // Agreements, supports, and other optional stuffs
     groupState: boolean;
-    groupName: string;
+    groupName?: string;
     provisionAgreement: boolean;
     visaSupport: boolean;
     financialAid: boolean;
     prevParticipation: boolean;
 
-    channel: string;
-    otherChannel: string;
+    channel?: string;
+    otherChannel?: string;
 
     paymentCheck: boolean;
 
     // Form maintainence
-    lastUpdate: string | undefined;
+    lastUpdate?: string;
 }
 
 // Interface storing Apllication Component State
@@ -46,10 +41,6 @@ export interface IApplicationState {
 
 export interface IApplicationOptions {
     countries: JSX.Element[];
-    schools: Array<{
-        value: string;
-        label: string;
-    }>;
     genders: JSX.Element[];
     channels: JSX.Element[];
     ages: JSX.Element[];

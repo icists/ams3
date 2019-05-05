@@ -9,6 +9,7 @@
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
@@ -18,7 +19,7 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": false 
   },
   "exclude": [
     "node_modules",
