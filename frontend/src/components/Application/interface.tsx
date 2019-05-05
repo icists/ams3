@@ -1,4 +1,5 @@
 import { ValueType } from 'react-select/lib/types';
+import { number } from 'prop-types';
 
 // Interface storing Application Form Informations
 export interface IApplicationForm {
@@ -7,7 +8,7 @@ export interface IApplicationForm {
     nameLast?: string;
     sex?: string;
     birthDate?: string;
-    nationality?: ValueType<JSX.Element>;
+    nationality?: string;
     school?: string;
     major?: string;
 
@@ -23,6 +24,7 @@ export interface IApplicationForm {
     provisionAgreement: boolean;
     visaSupport: boolean;
     financialAid: boolean;
+    dormUse: boolean;
     prevParticipation: boolean;
 
     channel?: string;
@@ -36,7 +38,7 @@ export interface IApplicationForm {
 
 // Interface storing Apllication Component State
 export interface IApplicationState {
-    ableToSave: boolean;
+    essayCount: number;
 }
 
 export interface IApplicationOptions {

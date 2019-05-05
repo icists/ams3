@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 
 import { withFirebase } from '../Firebase';
@@ -6,8 +6,9 @@ import * as ROUTES from '../../constants/routes';
 
 const PasswordForgetPage = () => (
   <div className="password-forget">
-    <h1>PasswordForget</h1>
+    <h1>Did you forget your password?</h1>
     <PasswordForgetForm />
+    <h5>Password-reset email will be sent. Check your inbox.</h5>
   </div>
 );
 
@@ -16,14 +17,22 @@ const INITIAL_STATE = {
   error: null,
 };
 
-class PasswordForgetFormBase extends Component {
-  constructor(props) {
+interface IPasswordForgetState {
+  email: string;
+  error: any;
+
+}
+
+class PasswordForgetFormBase extends Component<any, IPasswordForgetState> {
+  constructor(props: any) {
     super(props);
 
-    this.state = { ...INITIAL_STATE };
+    this.state = {
+      ...INITIAL_STATE
+    };
   }
 
-  onSubmit = event => {
+  onSubmit = (event: FormEvent<HTMLFormElement>) => {
     const { email } = this.state;
 
     this.props.firebase
@@ -31,15 +40,19 @@ class PasswordForgetFormBase extends Component {
       .then(() => {
         this.setState({ ...INITIAL_STATE });
       })
-      .catch(error => {
+      .catch((error: any) => {
         this.setState({ error });
       });
 
     event.preventDefault();
   };
 
-  onChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const target = event.currentTarget;
+    this.setState((current) => ({
+      ...current,
+      [target.name]: target.value
+    }));
   };
 
   render() {
@@ -72,7 +85,6 @@ class PasswordForgetFormBase extends Component {
         </div>
         <div className="col-md-4"></div>
       </div>
-
         {error && <p>{error.message}</p>}
       </form>
       </div>
@@ -83,7 +95,7 @@ class PasswordForgetFormBase extends Component {
 const PasswordForgetLink = () => (
   <div className="row text-center">
   <div className="col forget-password">
-    <Link to={ROUTES.PASSWORD_FORGET} class="forget-password-link">Forgot Password?</Link>
+    <Link to={ROUTES.PASSWORD_FORGET} className="forget-password-link">Forgot Password?</Link>
   </div>
   </div>
 );
