@@ -552,6 +552,49 @@ code {
   color: #efefef !important;
   background-attachment: fixed;
   text-align: center;
-  padding-top: 300px;
+  padding-top: 100px;
   padding-bottom: 300px;
+}
+
+.event-info{
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.event-how-to-apply p{
+  font-size: 20px;
+}
+
+.event-brief {
+  line-height: 200%;
+}
+
+.event-brief h2 {
+  padding-top: 30px;
+} 
+
+.event-how-to-apply {
+  line-height: 300%;
+}
+
+.event-speakers img{
+  padding:15px;
+}
+.event-speakers h2{
+  padding-top: 30px;
+}
+.event-sponsors h2{
+  padding-top: 30px;
+}
+.event-schedule h2{
+  padding-top: 30px;
+}
+
+.icists-2018-image {
+  padding: 30px;
+}
+
+.event-schedule p{
+  padding: 15px;
+  font-size: 18px;
 }
