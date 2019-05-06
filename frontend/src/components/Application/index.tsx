@@ -99,7 +99,7 @@ class ApplicationBase extends React.Component<
   private validateDate = (date?: string) => {
     if (date === undefined)
       return false;
-    const re = /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
+    const re = /^((0?[1-9]|1[012])[/](0?[1-9]|[12][0-9]|3[01])[/](19|20)[0-9]{2})*$/;
     return !re.test(date);
   }
 
