@@ -353,15 +353,19 @@ code {
 .app-channel{
   margin: 40px auto;
 }
+.app-notice{
+  margin: 30px auto;
+  font-size: 20px;
+}
 .app-save{
   margin: 30px auto;
   font-size: 20px;
+  margin-bottom: 120px;
 }
 .app-alert{
   padding-top: 30px;
   padding-bottom: 30px;
-  margin-top: 60px;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
 }
 .application input{
   width: 100%;

@@ -601,28 +601,34 @@ class ApplicationBase extends React.Component<
                 </div>
               : <div/>}
           </div>
-          <div className="notice">
-            <div className="row">
-              <div className="col-md-12">
-                  {this.state.lastUpdate !== undefined
-                    ? <div className="app-alert row alert alert-success">
-                      <p>Your applicatoin is saved properly. We will send you email about the conference. Stay tuned with your inbox!</p>
+            {this.state.lastUpdate !== undefined
+              ? <div className="row">
+                  <div className="app-notice">
+                    <div className="app-alert row alert alert-success">
+                      <div className="col-md-12">
+                        <p className="text-center">
+                          Your applicatoin is saved properly.
+                        </p>
+                        <p className="text-center">
+                          We will send you email about the conference. Stay tuned with your inbox!
+                        </p>
+                      </div>
                     </div>
-                    : <div/> }
+                  </div>
+                </div>
+              : <div/>}
+          <div className="row">
+            <div className="app-save">
+              <div className="app-alert row alert alert-primary">
+                <div className="col-md-12">
+                    <p className="text-center">
+                      Your application is saved at {this.state.lastUpdate}
+                    </p>
+                    <button type="submit" className="btn btn-primary w-100">
+                      Save
+                    </button>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="app-save">
-            <div className="app-alert row alert alert-primary">
-              <div className="col-md-9">
-                <p className="text-center">Your application is saved at {this.state.lastUpdate}</p>
-              </div>
-              <div className="col-md-2">
-                <button type="submit" className="btn btn-primary w-100">
-                  Save
-                </button>
-              </div>
-              <div className="col-md-auto"/>
             </div>
           </div>
           </form>
