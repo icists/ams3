@@ -27,7 +27,11 @@ const INITIAL_STATE: IApplicationForm = {
 
   phoneNumber: undefined,
   notificationEmail: undefined,
+
   essay: undefined,
+  essayWordCount: 0,
+
+
   groupState: false,
   groupName: undefined,
   provisionAgreement: false,
@@ -59,7 +63,6 @@ class ApplicationBase extends React.Component<
 
     this.state = {
       ...INITIAL_STATE,
-      essayCount: 0,
     };
 
     this.options = {
@@ -87,12 +90,6 @@ class ApplicationBase extends React.Component<
           ...snapshot.val()
         })
       })
-    
-    if (this.state.essay !== undefined) {
-      this.setState({
-        essayCount: this.state.essay.trim().split(/\s+/).length
-      })
-    }
   }
 
   private forceFirstUpper = (name: string) => {
@@ -118,12 +115,18 @@ class ApplicationBase extends React.Component<
       return false;
     let isValid = true;
     Object.keys(entry).forEach((key) => {
-      if (typeof entry[key] === 'undefined') {
+      if (entry[key] === undefined) {
         isValid = false;
         return;
       }
+      if (typeof entry[key] === 'string') {
+        if (entry[key].length === 0) {
+          isValid = false;
+          return;
+        }
+      }
     })
-    if (entry.lastUpdate === undefined || entry.otherChannel === undefined) {
+    if (entry.lastUpdate === undefined) {
       isValid = true;
     }
     return isValid;
@@ -142,7 +145,7 @@ class ApplicationBase extends React.Component<
     this.setState((current) => ({
       ...current,
       [target.name]: target.value,
-      essayCount: target.value.trim().split(/\s+/).length,
+      essayWordCount: target.value.trim().split(/\s+/).length,
     }));
   }
 
@@ -172,8 +175,8 @@ class ApplicationBase extends React.Component<
   onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // For invalid entry submitted
     if (!this.validateSubmitEntry(this.state)) {
-      event.preventDefault();
       alert("Please fill or select all information");
+      event.preventDefault();
       return;
     }
     const uid = this.props.firebase.auth.currentUser.uid;
@@ -555,10 +558,10 @@ class ApplicationBase extends React.Component<
             </div>
             <div className="row">
               <div className="col">
-                  Word Count: {this.state.essayCount} / {this.essayMinWordCount}
+                  Word Count: {this.state.essayWordCount} / {this.essayMinWordCount}
               </div>
               <div className="col">
-                {this.state.essayCount < this.essayMinWordCount ?
+                {this.state.essayWordCount < this.essayMinWordCount ?
                   <div>Please write at least 300 words. </div>
                 : <div />
                 }
