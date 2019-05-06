@@ -49,20 +49,20 @@ class SignUpFormBase extends React.Component {
                 });
             })
             .then(() => {
-                this.setState({
-                    verificationSent: true,
-                })
-                return this.props.firebase.doSendEmailVerification();
+              this.setState({
+                verificationSent: true,
+              });
+              return this.props.firebase.doSendEmailVerification();
             })
             .then(authUser => {
-                this.setState({ ...INITIAL_STATE });
-                this.props.history.push(ROUTES.HOME);
+              this.setState({ ...INITIAL_STATE });
+              this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
-                if (error !== undefined) {
-                    alert(error.message);
-                }
-                this.setState({ error });
+              if (error !== undefined) {
+                alert(error.message);
+              }
+              this.setState({ error });
             });
         
         event.preventDefault();
@@ -151,11 +151,11 @@ class SignUpFormBase extends React.Component {
                 </div>
                 <div className="col-md-4"></div>
             </div>
-                    {this.state.verificationSent
-                        ?   <div className="alert alert-success">
-                            Verification Email is sent! Please check your email and verify your account.
-                            </div>
-                        : <div></div>}
+                {this.state.verificationSent
+                ? <div className="alert alert-success">
+                    <b>Verification Email is sent!</b> Please check your email.
+                  </div>
+                : <div></div>}
             {error && 
                 <div className="row">
                 <div className="col-md-3"></div>

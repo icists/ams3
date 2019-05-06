@@ -7,7 +7,5 @@
       "coverage/lcov-report/*.js"
     ]
   },
-  "defaultSeverity": "off",
-  "rules": {
-  }
+  "defaultSeverity": "off"
 }
