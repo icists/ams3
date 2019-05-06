@@ -25,6 +25,7 @@ export interface IApplicationForm {
   provisionAgreement: boolean;
   visaSupport: boolean;
   financialAid: boolean;
+  financialAidEssay?: string;
   dormUse: boolean;
   prevParticipation: boolean;
 

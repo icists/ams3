@@ -367,6 +367,13 @@ code {
   padding-bottom: 30px;
   margin-bottom: 30px;
 }
+.app-essay h5{
+  padding-bottom: 10px;
+}
+.app-essay-word-count {
+  text-align: center;
+  padding-top: 10px;
+}
 .application input{
   width: 100%;
   background: none;

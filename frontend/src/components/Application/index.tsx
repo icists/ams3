@@ -12,6 +12,7 @@ import countryList from 'react-select-country-list';
 import { IApplicationForm, IApplicationState, IApplicationOptions } from "./interface";
 
 import { provision } from "../../constants/provision";
+import { essayProposition, essayTopic1, essayContent1, essayTopic2, essayContent2 } from '../../constants/essayTopic';
 
 /**
  * Template for application form
@@ -37,6 +38,7 @@ const INITIAL_STATE: IApplicationForm = {
   provisionAgreement: false,
   visaSupport: false,
   financialAid: false,
+  financialAidEssay: undefined,
   dormUse: false,
   prevParticipation: false,
   
@@ -147,6 +149,14 @@ class ApplicationBase extends React.Component<
       [target.name]: target.value,
       essayWordCount: target.value.trim().split(/\s+/).length,
     }));
+  }
+  
+  onTextAreaFiEssayChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const target = event.currentTarget;
+    this.setState((current) => ({
+      ...current,
+      [target.name]: target.value,
+    }))
   }
 
   onInputCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -513,6 +523,24 @@ class ApplicationBase extends React.Component<
               </label>
             </div>
           </div>
+              {this.state.financialAid
+                ?
+                <div className="financial-aid-essay">
+                  <p>
+                    ICISTS encourages participation of those who currently do not reside in, or are non-permanent residents of the Republic of Korea. Applicants for the Financial Aid Program will be evaluated and the selected applicants will be provided with a grant of 150 USD - 400 USD. 
+                  </p>
+                  <p>
+                    Please write a brief essay to show the reason why you are applying for a financial aid.
+                  </p>
+                  <textarea
+                    className="app-as-finanical-aid-essay form-control"
+                    value={this.state.financialAidEssay}
+                    onChange={this.onTextAreaFiEssayChange}
+                    placeholder="Your essay for financial aid here"
+                    rows={5}
+                  />
+                </div>
+                : <div />}
         </div>
         <hr/>
         <div className="app-payment">
@@ -541,10 +569,45 @@ class ApplicationBase extends React.Component<
             <div className="row">
               <div className="col">
                 <div className="">
-                  <h5> Topic: TBD </h5>
+                  <p>{essayProposition}</p>
                 </div>
               </div>
             </div>
+            <div className="row">
+              <div className="col">
+                  <h5
+                    className="essay-topic=1"
+                  > {essayTopic1}
+                  </h5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <textarea
+                  disabled={true}
+                  className="essay-content-1 form-control"
+                  rows={8}
+                  value={essayContent1}
+                />
+              </div>
+            </div>
+            <hr/>
+            <div className="row">
+              <div className="col">
+                  <h5> {essayTopic2} </h5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <textarea
+                  disabled={true}
+                  className="essay-content-2 form-control"
+                  rows={5}
+                  value={essayContent2}
+                />
+              </div>
+            </div>
+            <hr/>
             <div className="row">
               <div className="col-md-12">
                 <textarea
@@ -553,23 +616,32 @@ class ApplicationBase extends React.Component<
                   name="essay"
                   onChange={this.onTextAreaEssayChange}
                   value={this.state.essay}
+                  placeholder="Your essay here"
                 />
               </div>
             </div>
-            <div className="row">
-              <div className="col">
-                  Word Count: {this.state.essayWordCount} / {this.essayMinWordCount}
-              </div>
-              <div className="col">
-                {this.state.essayWordCount < this.essayMinWordCount ?
-                  <div>Please write at least 300 words. </div>
-                : <div />
-                }
+            <div className="app-essay-word-count">
+              <div className="row">
+                <div className="col-md-2">
+                    Word Count: {this.state.essayWordCount} / {this.essayMinWordCount}
+                </div>
+                <div className="col-md-7"></div>
+                <div className="col-md-3">
+                  {this.state.essayWordCount < this.essayMinWordCount ?
+                    <div>Please write at least 300 words. </div>
+                  : <div />
+                  }
+                </div>
               </div>
             </div>
         </div>
         <hr/>
         <div className="app-channel">
+          <div className="row">
+            <div className="col">
+              <h3>Survey</h3>
+            </div>
+          </div>
           <div className="row">
             <div className="col-md-8">
               <label htmlFor="app-channel-select">
@@ -621,9 +693,14 @@ class ApplicationBase extends React.Component<
             <div className="app-save">
               <div className="app-alert row alert alert-primary">
                 <div className="col-md-12">
-                    <p className="text-center">
-                      Your application is saved at {this.state.lastUpdate}
-                    </p>
+                      {this.state.lastUpdate === undefined
+                      ? <p className="text-center">
+                          Your application is not saved yet!
+                        </p>
+                      : <p className="text=center">
+                          Your application is saved at{this.state.lastUpdate}
+                        </p>
+                      }
                     <button type="submit" className="btn btn-primary w-100">
                       Save
                     </button>
