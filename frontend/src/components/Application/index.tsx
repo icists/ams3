@@ -185,18 +185,25 @@ class ApplicationBase extends React.Component<
   onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // For invalid entry submitted
     if (!this.validateSubmitEntry(this.state)) {
-      alert("Please fill or select all information");
       event.preventDefault();
+      alert("Please fill or select all information");
       return;
     }
     const uid = this.props.firebase.auth.currentUser.uid;
+    console.log(uid);
+    console.log(this.state);
+    debugger;
+    // You have to sanitize undefined data!
     this.props.firebase.userApplication(uid).set({
       ...this.state,
       nameFirst: this.forceFirstUpper(this.state.nameFirst as string),
       nameLast: this.forceFirstUpper(this.state.nameLast as string),
+      groupName: this.state.groupName === undefined ? "" : this.state.groupName,
       otherChannel: this.state.otherChannel === undefined ? "" : this.state.otherChannel,
+      financialAidEssay: this.state.financialAidEssay === undefined ? "" : this.state.financialAidEssay,
       lastUpdate: (new Date()).toTimeString(),
     });
+    debugger;
   }
 
   render() {
@@ -250,11 +257,14 @@ class ApplicationBase extends React.Component<
             </div>
             <div className="col-md-4">
               <select
-                defaultValue="Your Sex"
                 name="sex"
                 className="app-sex-select w-100 form-control"
                 onChange={this.onSelectChange}
-                value={this.state.sex} >
+                value={this.state.sex}
+              >
+                <option selected={true} disabled={true}>
+                  Your Sex
+                </option>
                 {this.options.genders}
               </select>
             </div>
@@ -290,11 +300,14 @@ class ApplicationBase extends React.Component<
                 <div className="app-nationality">
                   <label htmlFor="app-nationality-select">Nationality</label>
                   <select
-                    defaultValue="Your Country"
                     name="nationality"
                     className="app-nationality-select w-100 form-control"
                     onChange={this.onSelectChange}
-                    value={this.state.nationality} >
+                    value={this.state.nationality}
+                  >
+                    <option disabled={true} selected={true}>
+                      Your Country
+                    </option>
                     {this.options.countries}
                   </select>
                 </div>
@@ -650,12 +663,14 @@ class ApplicationBase extends React.Component<
             </div>
             <div className="col-md-4">
                 <select
-                  defaultValue="I've heard about ICISTS from..."
                   name="channel"
                   className="app-channel-select form-control"
                   onChange={this.onSelectChange}
                   value={this.state.channel}
                 >
+                  <option disabled={true} selected={true}>
+                    I've heard about ICISTS from...
+                  </option>
                   {this.options.channels}
                 </select>
             </div>
