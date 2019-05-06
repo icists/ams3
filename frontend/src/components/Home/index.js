@@ -6,6 +6,9 @@ import AboutKaist from './AboutKaist'
 import Icists2019 from './Icists2019'
 import MoreInfo from './MoreInfo'
 import Sessions from './Sessions'
+import AboutIcists from './AboutIcists'
+import Icistsposter from './Icistsposter'
+import Event from './Event'
 
 export class Home extends Component {
   render() {
@@ -13,12 +16,14 @@ export class Home extends Component {
 <div className="home">
 <div className="row">
 <div className="col-12 home-content">
-    {/* <img src={homeimg} alt=""/> */}
     <Promo />
     <AboutKaist />
+    <AboutIcists />
+    <Icistsposter />
     <Icists2019 />
     <MoreInfo />
-    <Sessions />
+    <Event />
+    {/* <Sessions /> */}
 </div>
 </div>
 </div>
