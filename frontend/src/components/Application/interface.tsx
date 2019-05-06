@@ -16,6 +16,7 @@ export interface IApplicationForm {
   phoneNumber?: string;
   notificationEmail?: string;
 
+  essayTopic?: string;
   essay?: string;
   essayWordCount: number;
 

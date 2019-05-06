@@ -14,6 +14,7 @@
     "bootstrap-select": "^1.13.10",
     "dotenv": "^7.0.0",
     "firebase": "^5.10.0",
+    "intl-tel-input": "^15.0.2",
     "react": "^16.8.6",
     "react-autocomplete": "^1.8.1",
     "react-autocomplete-input": "^1.0.10",

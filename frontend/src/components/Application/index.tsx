@@ -12,7 +12,7 @@ import countryList from 'react-select-country-list';
 import { IApplicationForm, IApplicationState, IApplicationOptions } from "./interface";
 
 import { provision } from "../../constants/provision";
-import { essayProposition, essayTopic1, essayContent1, essayTopic2, essayContent2 } from '../../constants/essayTopic';
+import { essayProposition, essayTopic1, essayContent1_1, essayContent1_2,essayTopic2, essayContent2_1, essayContent2_2  } from '../../constants/essayTopic';
 
 /**
  * Template for application form
@@ -29,6 +29,7 @@ const INITIAL_STATE: IApplicationForm = {
   phoneNumber: undefined,
   notificationEmail: undefined,
 
+  essayTopic: undefined,
   essay: undefined,
   essayWordCount: 0,
 
@@ -117,6 +118,7 @@ class ApplicationBase extends React.Component<
       return false;
     let isValid = true;
     Object.keys(entry).forEach((key) => {
+      console.log(key)
       if (entry[key] === undefined) {
         isValid = false;
         return;
@@ -182,6 +184,14 @@ class ApplicationBase extends React.Component<
     }))
   }
 
+  onRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.currentTarget;
+    this.setState((current) => ({
+      ...current,
+      essayTopic:target.id,
+    }))
+  }
+
   onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // For invalid entry submitted
     if (!this.validateSubmitEntry(this.state)) {
@@ -192,7 +202,7 @@ class ApplicationBase extends React.Component<
     const uid = this.props.firebase.auth.currentUser.uid;
     console.log(uid);
     console.log(this.state);
-    debugger;
+    //debugger;
     // You have to sanitize undefined data!
     this.props.firebase.userApplication(uid).set({
       ...this.state,
@@ -203,11 +213,13 @@ class ApplicationBase extends React.Component<
       financialAidEssay: this.state.financialAidEssay === undefined ? "" : this.state.financialAidEssay,
       lastUpdate: (new Date()).toTimeString(),
     });
-    debugger;
+    //debugger;
+    
   }
 
   render() {
     console.log(this.state); // For Debugging
+    
     return (
       <div className="application">
       <h1>ICISTS 2019 Application</h1>
@@ -417,8 +429,9 @@ class ApplicationBase extends React.Component<
                   value={this.state.phoneNumber}
                   onChange={this.onInputTextChange}
                   placeholder="Phone Number without '-'"
-                  type="text"
-                />
+                  type="tel"
+                > 
+                </input>
               </div>
               <div className="col-md-6" />
             </div>
@@ -436,7 +449,7 @@ class ApplicationBase extends React.Component<
         </div>
         <hr/>
         <div className="app-as">
-          <h3> Agreements & Supports </h3>
+          <h3> Terms & Conditions </h3>
           <div className="row">
             <div className="col">
               <textarea
@@ -461,99 +474,108 @@ class ApplicationBase extends React.Component<
             </div>
             <div className="col-md-11">
               <label className="app-provision-check-label" htmlFor="app-provision-check">
-                <b>(REQUIRED) Check if you agree with the provision</b>
+                <b>(REQUIRED) Check if you agree with the Terms & Conditions</b>
               </label>    
             </div>
           </div>
           <hr/>
-          <div className="row">
-            <div className="col-md-1">
-              <div className="app-dorm-use-check">
-                <input
-                  name="dormUse"
-                  className="app-dorm-use-check form-control"
-                  type="checkbox"
-                  onChange={this.onInputCheckboxChange}
-                  checked={this.state.dormUse}
-                />
-              </div>
-            </div>
-            <div className="col-md-5">
-              <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
-                Check if you are applying for using dormitory at KAIST during the conference
-              </label>
-            </div>
-            <div className="col-md-1">
-              <div className="app-prev-participation">
-                <input
-                  name="prevParticipation"
-                  className="app-prev-participation-check form-control"
-                  type="checkbox"
-                  onChange={this.onInputCheckboxChange}
-                  checked={this.state.prevParticipation}
-                />
-              </div>
-            </div>
-            <div className="col-md-5">
-              <label className="app-prev-participation-check" htmlFor="app-prev-participation-check">
-                Check if you have participated ICISTS before
-              </label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-1">
-              <div className="app-visa">
-                <input
-                  name="visaSupport"
-                  className="app-visa-check form-control"
-                  type="checkbox"
-                  onChange={this.onInputCheckboxChange}
-                  checked={this.state.visaSupport}
-                />
-              </div>
-            </div>
-            <div className="col-md-5">
-              <label className="app-visa-check-label" htmlFor="app-visa-check">
-                Check if you need a visa supporting letter to enter South Korea
-              </label>
-            </div>
-            <div className="col-md-1">
-              <div className="app-financial-aid">
-                <input
-                  name="financialAid"
-                  className="app-financial-aid-check form-control"
-                  type="checkbox"
-                  onChange={this.onInputCheckboxChange}
-                  checked={this.state.financialAid}
-                />
-              </div>
-            </div>
-            <div className="col-md-5">
-              <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
-                Check if you are applying for financial aid
-                <br />
-                <small>You have to write an essay to apply this</small>
-              </label>
-            </div>
-          </div>
-              {this.state.financialAid
-                ?
-                <div className="financial-aid-essay">
-                  <p>
-                    ICISTS encourages participation of those who currently do not reside in, or are non-permanent residents of the Republic of Korea. Applicants for the Financial Aid Program will be evaluated and the selected applicants will be provided with a grant of 150 USD - 400 USD. 
-                  </p>
-                  <p>
-                    Please write a brief essay to show the reason why you are applying for a financial aid.
-                  </p>
-                  <textarea
-                    className="app-as-finanical-aid-essay form-control"
-                    value={this.state.financialAidEssay}
-                    onChange={this.onTextAreaFiEssayChange}
-                    placeholder="Your essay for financial aid here"
-                    rows={5}
+          <div>
+            <h3>Please check the entries that applies to you.</h3>
+            <div className="row">
+              <div className="col-md-1">
+                <div className="app-dorm-use-check">
+                  <input
+                    name="dormUse"
+                    className="app-dorm-use-check form-control"
+                    type="checkbox"
+                    onChange={this.onInputCheckboxChange}
+                    checked={this.state.dormUse}
                   />
                 </div>
-                : <div />}
+              </div>
+              <div className="col-md-11">
+                <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
+                  Check if you are applying for using dormitory at KAIST during the conference<br /> 
+                  (You will have to pay extra accommodation fee if you apply dormitory stay at KAIST.)
+                </label>
+              </div>
+            </div>
+            <hr />
+            <div className="row">  
+              <div className="col-md-1">
+                <div className="app-prev-participation">
+                  <input
+                    name="prevParticipation"
+                    className="app-prev-participation-check form-control"
+                    type="checkbox"
+                    onChange={this.onInputCheckboxChange}
+                    checked={this.state.prevParticipation}
+                  />
+                </div>
+              </div>
+              <div className="col-md-11">
+                <label className="app-prev-participation-check" htmlFor="app-prev-participation-check">
+                  Check if you have participated ICISTS before
+                </label>
+              </div>
+            </div>
+            <hr/>
+            <div className="row">
+              <div className="col-md-1">
+                <div className="app-visa">
+                  <input
+                    name="visaSupport"
+                    className="app-visa-check form-control"
+                    type="checkbox"
+                    onChange={this.onInputCheckboxChange}
+                    checked={this.state.visaSupport}
+                  />
+                </div>
+              </div>
+              <div className="col-md-11">
+                <label className="app-visa-check-label" htmlFor="app-visa-check">
+                  Check if you need a visa supporting letter to enter South Korea
+                </label>
+              </div>
+            </div>
+            <hr/>
+            <div className="row">
+              <div className="col-md-1">
+                <div className="app-financial-aid">
+                  <input
+                    name="financialAid"
+                    className="app-financial-aid-check form-control"
+                    type="checkbox"
+                    onChange={this.onInputCheckboxChange}
+                    checked={this.state.financialAid}
+                  />
+                </div>
+              </div>
+              <div className="col-md-11">
+                <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
+                  Check if you are applying for financial aid
+                </label>
+              </div>
+            </div>
+                {this.state.financialAid
+                  ?
+                  <div className="financial-aid-essay">
+                    <p>
+                      ICISTS encourages participation of those who currently do not reside in, or are non-permanent residents of the Republic of Korea. Applicants for the Financial Aid Program will be evaluated and the selected applicants will be provided with a grant of 150 USD - 400 USD. 
+                    </p>
+                    <p>
+                      Please write a brief essay to show the reason why you are applying for a financial aid.
+                    </p>
+                    <textarea
+                      className="app-as-finanical-aid-essay form-control"
+                      value={this.state.financialAidEssay}
+                      onChange={this.onTextAreaFiEssayChange}
+                      placeholder="Your essay for financial aid here"
+                      rows={5}
+                    />
+                  </div>
+                  : <div />}
+          </div>
         </div>
         <hr/>
         <div className="app-payment">
@@ -586,6 +608,7 @@ class ApplicationBase extends React.Component<
                 </div>
               </div>
             </div>
+
             <div className="row">
               <div className="col">
                   <h5
@@ -599,8 +622,19 @@ class ApplicationBase extends React.Component<
                 <textarea
                   disabled={true}
                   className="essay-content-1 form-control"
-                  rows={8}
-                  value={essayContent1}
+                  rows={3}
+                  value={essayContent1_1}
+                />
+              </div>
+            </div>
+            <hr />
+            <div className="row">
+              <div className="col">
+                <textarea
+                  disabled={true}
+                  className="essay-content-1 form-control"
+                  rows={5}
+                  value={essayContent1_2}
                 />
               </div>
             </div>
@@ -615,9 +649,44 @@ class ApplicationBase extends React.Component<
                 <textarea
                   disabled={true}
                   className="essay-content-2 form-control"
-                  rows={5}
-                  value={essayContent2}
+                  rows={2}
+                  value={essayContent2_1}
                 />
+              </div>
+            </div>
+            <hr />
+            <div className="row">
+              <div className="col">
+                <textarea
+                  disabled={true}
+                  className="essay-content-1 form-control"
+                  rows={4}
+                  value={essayContent2_2}
+                />
+              </div>
+            </div>
+            <hr />
+            <div className="row">
+              <div className="col-md-12">
+                <div className="custom-control custom-radio custom-control-inline">
+                  <input type="radio" className="custom-control-input" id="essay1_1" name="groupOfRadios" onChange={this.onRadioChange} checked={this.state.essayTopic==='essay1_1'}/>
+                  <label className="custom-control-label" htmlFor="essay1_1">Essay Topic 1-1</label>
+                </div>
+
+                <div className="custom-control custom-radio custom-control-inline">
+                  <input type="radio" className="custom-control-input" id="essay1_2" name="groupOfRadios" onChange={this.onRadioChange} checked={this.state.essayTopic==='essay1_2'}/>
+                  <label className="custom-control-label" htmlFor="essay1_2">Essay Topic 1-2</label>
+                </div>
+
+                <div className="custom-control custom-radio custom-control-inline">
+                  <input type="radio" className="custom-control-input" id="essay2_1" name="groupOfRadios" onChange={this.onRadioChange} checked={this.state.essayTopic==='essay2_1'}/>
+                  <label className="custom-control-label" htmlFor="essay2_1">Essay Topic 2-1</label>
+                </div>
+
+                <div className="custom-control custom-radio custom-control-inline">
+                  <input type="radio" className="custom-control-input" id="essay2_2" name="groupOfRadios" onChange={this.onRadioChange} checked={this.state.essayTopic==='essay2_2'}/>
+                  <label className="custom-control-label" htmlFor="essay2_2">Essay Topic 2-2</label>
+                </div>
               </div>
             </div>
             <hr/>
@@ -636,12 +705,12 @@ class ApplicationBase extends React.Component<
             <div className="app-essay-word-count">
               <div className="row">
                 <div className="col-md-2">
-                    Word Count: {this.state.essayWordCount} / {this.essayMinWordCount}
+                    Word Count: {this.state.essayWordCount}
                 </div>
                 <div className="col-md-7"></div>
                 <div className="col-md-3">
                   {this.state.essayWordCount < this.essayMinWordCount ?
-                    <div>Please write at least 300 words. </div>
+                    <div>Please write around 300 words. </div>
                   : <div />
                   }
                 </div>
@@ -692,7 +761,7 @@ class ApplicationBase extends React.Component<
               ? <div className="row">
                   <div className="app-notice">
                     <div className="app-alert row alert alert-success">
-                      <div className="col-md-12">
+                      <div className="col-md-14">
                         <p className="text-center">
                           Your applicatoin is saved properly.
                         </p>
@@ -707,7 +776,7 @@ class ApplicationBase extends React.Component<
           <div className="row">
             <div className="app-save">
               <div className="app-alert row alert alert-primary">
-                <div className="col-md-12">
+                <div className="col-md-14">
                       {this.state.lastUpdate === undefined
                       ? <p className="text-center">
                           Your application is not saved yet!
