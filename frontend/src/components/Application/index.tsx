@@ -759,16 +759,16 @@ class ApplicationBase extends React.Component<
                 </div>
               : <div/>}
           </div>
-            {this.state.lastUpdate !== undefined
+            {this.state.lastUpdate.length !== 0 
               ? <div className="row">
                   <div className="app-notice">
                     <div className="app-alert row alert alert-success">
                       <div className="col-md-14">
                         <p className="text-center">
-                          Your applicatoin is saved properly.
+                          Your application has been saved properly.
                         </p>
                         <p className="text-center">
-                          Early Application ends after {timeRemained()}. Your application will be submitted automatically.
+                          Early Application ends after {timeRemained()}. Your application will be submitted automatically on June 2.
                         </p>
                         <p className="text-center">
                           We will send you email about the conference. Stay tuned with your inbox!
