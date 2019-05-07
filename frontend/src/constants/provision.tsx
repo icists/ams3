@@ -61,8 +61,8 @@ v.NO refund for cancellation within 3 days before the conference.
 
 Term 9. Applicant Information/Privacy
 1.The organizing committee shall collect (i) name, (ii) nationality, (iii) university or college, (iv) year and date of birth, (v) sex, (vi) phone number, (vii) e-mail of applicants. The collected information shall be used only for planning and running the conference and no other purpose.
-2.All information except (i) applicant’s university or college, (ii) year and date of birth, (iii) sex is deleted immediately after the end of the conference. The listed information will be used only for the analysis and promotion of our event.
-3.If the applicant agrees to our additional terms of service when applying, the organizing committee shall keep the information written in Term 9, Clause 1 for 1 year and the applicant will be provided information regarding other events ICISTS organizes. The information will only be used for the events we organize and will be deleted automatically after 1 year.
+2.All information is deleted one year after the end of the conference. The information will be used only for the analysis, promotion, and planning of the event that the ICISTS Organizing Committee organizes.
+3.If the applicant requests for the deletion of one's personal information, the Organizing Committee shall delete the relevant information immediately.
 
 Section 3: Rights and Duties
 
@@ -152,8 +152,8 @@ Term 15. Jurisdiction and Proper Law
 
 제 9조 (참가자 정보)
 1. 원활한 행사 진행을 위하여 참가자의 이름, 국적, 재학 대학 및 학과, 생년월일, 성별, 휴대전화 번호, 이메일을 수집하며, 이는 행사를 위한 진행 이외에는 사용되지 않습니다.
-2. 참가자 대학 및 학과 정보, 생년월일, 성별을 제외한 정보는 행사가 끝남과 동시에 파기되며 위 정보는 참가자 분석 및 홍보의 용도로만 활용됩니다.
-3. 참가 신청 시 별도의 동의를 할 경우 1년간 9조 1항에 명시된 정보를 보관하며 참가자는 조직위원회가 개최하는 다른 행사에 대한 정보를 제공받을 수 있습니다. 단, 개인정보는 오직 조직위원회가 기획하는 행사에만 사용되며 1년 후 자동 파기됩니다.
+2. 전항에 명시된 정보는 행사가 끝난 후 1년 뒤에 자동으로 파기되며 위 정보는 참가자 분석, 홍보 및 조직위원회가 기획하는 행사에만 사용에만 활용됩니다.
+3. 참가자가 본인의 정보 파기를 조직위원회에 요청한 경우 조직위원회는 즉시 그 정보를 파기합니다.
 
 제 3장 권리 및 의무
 
