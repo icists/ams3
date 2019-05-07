@@ -20,9 +20,9 @@ export class Home extends Component {
     <AboutKaist />
     <AboutIcists />
     <Icistsposter />
-    <Icists2019 />
-    <MoreInfo />
+    {/* <Icists2019 /> */}
     <Event />
+    <MoreInfo />
     {/* <Sessions /> */}
     <div className="container text-center" style={{background:"#333", color:"white"}}>
       <h2>Contact us for any type of inquiry regarding your application</h2><br />
