@@ -109,7 +109,6 @@ class ApplicationBase extends React.Component<
     const keys = Object.keys(entry);
     for (let i = 0; i < keys.length; i++) {
       let key = keys[i];
-      console.log(key);
 
       // Must agree with the provision
       if (key === 'provisionAgreement') {
@@ -204,9 +203,6 @@ class ApplicationBase extends React.Component<
       return;
     }
     const uid = this.props.firebase.auth.currentUser.uid;
-    console.log(uid);
-    console.log(this.state);
-    //debugger;
     // You have to sanitize undefined data!
     this.props.firebase.userApplication(uid).set({
       ...this.state,
@@ -217,8 +213,6 @@ class ApplicationBase extends React.Component<
       financialAidEssay: this.state.financialAidEssay === undefined ? "" : this.state.financialAidEssay,
       lastUpdate: (new Date()).toTimeString(),
     });
-    //debugger;
-    
   }
 
   render() {
@@ -230,7 +224,6 @@ class ApplicationBase extends React.Component<
 
       return `${d} day(s)`
     }
-    console.log(this.state); // For Debugging
     return (
       <div className="application">
       <h1>ICISTS 2019 Application</h1>
@@ -441,8 +434,7 @@ class ApplicationBase extends React.Component<
                   onChange={this.onInputTextChange}
                   placeholder="Phone Number without '-'"
                   type="tel"
-                > 
-                </input>
+                /> 
               </div>
               <div className="col-md-6" />
             </div>
@@ -709,7 +701,7 @@ class ApplicationBase extends React.Component<
                 <div className="col-md-2">
                     Word Count: {this.state.essayWordCount}
                 </div>
-                <div className="col-md-7"></div>
+                <div className="col-md-7"/>
                 <div className="col-md-3">
                   {this.state.essayWordCount < this.essayMinWordCount ?
                     <div>Please write around 300 words. </div>
@@ -787,7 +779,7 @@ class ApplicationBase extends React.Component<
                           Your application is not saved yet!
                         </p>
                       : <p className="text=center">
-                          Your application is saved at{this.state.lastUpdate}
+                          Your application is saved at {this.state.lastUpdate}
                         </p>
                       }
                     <button type="submit" className="btn btn-primary w-100">
