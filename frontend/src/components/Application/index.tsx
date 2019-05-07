@@ -111,22 +111,31 @@ class ApplicationBase extends React.Component<
   }
   
   private validateSubmitEntry = (entry: IApplicationForm): boolean => {
+    // Must agree with the provision
     if (entry.provisionAgreement == false)
       return false;
+
+
+    // Check if all forms are filled
     let isValid = true;
     Object.keys(entry).forEach((key) => {
-      console.log(key)
       if (entry[key] === undefined) {
         isValid = false;
         return;
       }
       if (typeof entry[key] === 'string') {
+        if (key === 'financialAidEssay' || key === 'otherChannel') {
+          isValid = true;
+          return;
+        }
         if (entry[key].length === 0) {
           isValid = false;
           return;
         }
       }
-    })
+    });
+
+    // Undefined lastUpdate: first submit
     if (entry.lastUpdate === undefined) {
       isValid = true;
     }
