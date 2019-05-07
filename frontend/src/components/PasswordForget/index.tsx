@@ -64,26 +64,26 @@ class PasswordForgetFormBase extends Component<any, IPasswordForgetState> {
       <div>
       <form onSubmit={this.onSubmit}>
       <div className="row">
-        <div className="col-md-4"></div>
+        <div className="col-md-4"/>
         <div className="col-md-4 tbox">
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
+          <input
+            name="email"
+            value={this.state.email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Email Address"
+          />
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-4"/>
       </div>
       <div className="row">
-        <div className="col-md-4"></div>
+        <div className="col-md-4"/>
         <div className="col-md-4">
         <button disabled={isInvalid} className="password-forget-btn btn btn-primary" type="submit">
           Reset My Password
         </button>
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-4"/>
       </div>
         {error && <p>{error.message}</p>}
       </form>

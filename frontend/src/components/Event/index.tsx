@@ -20,6 +20,8 @@ export class ICISTSEvent extends Component<any, any> {
               <div className="col-md-6">
                 <img
                   className="event-cupholder-image"
+                  height={cupholderImageHeight * cupholderImageRate}
+                  width={cupholderImageWidth * cupholderImageRate}
                   src={CupholderEventImage}
                 />
               </div>
@@ -55,7 +57,7 @@ export class ICISTSEvent extends Component<any, any> {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-1"></div>
+              <div className="col-md-1"/>
               <div className="col-md-10">
                 <p>
                   ICISTS는 과학 기술 사회에 대한 상호작용을 고찰하는 국제 대학생 컨퍼런스로, 이번 여름, 제 15회 컨퍼런스가 개최됩니다.
@@ -74,7 +76,7 @@ export class ICISTSEvent extends Component<any, any> {
                   행사일정: 2019년 7월 29일~8월 2일(옆에 포스터)(옆에 시간표넣고 클릭하면 확대되도록)
                 </p>
               </div>
-              <div className="col-md-1"></div>
+              <div className="col-md-1"/>
             </div>
           </div>
           <div className="event-schedule">
