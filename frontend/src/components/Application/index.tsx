@@ -115,7 +115,6 @@ class ApplicationBase extends React.Component<
     if (entry.provisionAgreement == false)
       return false;
 
-
     // Check if all forms are filled
     let isValid = true;
     Object.keys(entry).forEach((key) => {
@@ -124,7 +123,7 @@ class ApplicationBase extends React.Component<
         return;
       }
       if (typeof entry[key] === 'string') {
-        if (key === 'financialAidEssay' || key === 'otherChannel') {
+        if (key === 'essay' || key === 'financialAidEssay' || key === 'otherChannel') {
           isValid = true;
           return;
         }
@@ -224,8 +223,15 @@ class ApplicationBase extends React.Component<
   }
 
   render() {
+    const timeRemained = () => {
+      const now = new Date().getTime();
+      const DDay = new Date("June 2, 2019 23:59:59").getTime();
+      const distance = DDay - now;
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      return `${d} day(s)`
+    }
     console.log(this.state); // For Debugging
-    
     return (
       <div className="application">
       <h1>ICISTS 2019 Application</h1>
@@ -587,20 +593,12 @@ class ApplicationBase extends React.Component<
         <div className="app-payment">
           <h3> Payment </h3>
           <div className="row">
-            <div className="col-md-4">
-              <p>Your payment is {this.state.paymentCheck ? "" : "not"} verified {this.state.paymentCheck ? "" : "yet"}</p>
-            </div>
-            <div className="col-md-1">
-              <input
-                disabled={true}
-                name="paymentCheck"
-                className="app-payment-check-check form-control"
-                type="checkbox" onChange={this.onInputCheckboxChange}
-                checked={this.state.paymentCheck}
-              />
-            </div>
-            <div className="col-md-7">
-              If you have any concern about payment, please contact us.
+            <div className="col">
+              <p>The invoice for the participation fee will be sent after the application is reviewed.</p>
+              <p>If you have any concern about payment, please contact us.</p>
+              <hr />
+              <h5>Payment Status</h5>
+              <p>Your payment is {this.state.paymentCheck ? "" : "not"} verified {this.state.paymentCheck ? "" : "yet"}.</p>
             </div>
           </div>
         </div>
@@ -614,7 +612,6 @@ class ApplicationBase extends React.Component<
                 </div>
               </div>
             </div>
-
             <div className="row">
               <div className="col">
                   <h5
@@ -770,6 +767,9 @@ class ApplicationBase extends React.Component<
                       <div className="col-md-14">
                         <p className="text-center">
                           Your applicatoin is saved properly.
+                        </p>
+                        <p className="text-center">
+                          Early Application ends after {timeRemained()}. Your application will be submitted automatically.
                         </p>
                         <p className="text-center">
                           We will send you email about the conference. Stay tuned with your inbox!

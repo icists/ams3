@@ -1,6 +1,3 @@
-import { ValueType } from 'react-select/lib/types';
-import { number } from 'prop-types';
-
 // Interface storing Application Form Informations
 export interface IApplicationForm {
   // Personal Informations
