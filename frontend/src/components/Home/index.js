@@ -20,9 +20,9 @@ export class Home extends Component {
     <AboutKaist />
     <AboutIcists />
     <Icistsposter />
-    <Icists2019 />
-    <MoreInfo />
+    {/* <Icists2019 /> */}
     <Event />
+    <MoreInfo />
     {/* <Sessions /> */}
 </div>
 </div>
