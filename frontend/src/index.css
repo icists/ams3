@@ -262,6 +262,9 @@ code {
   width: 100%;
   margin: 30px auto;
 }
+.more-info h1{
+  font-size: 40px;
+}
 .more-info h2::after{
   content: '';
   background: #2c3e50;
@@ -274,14 +277,11 @@ code {
 
 /* sessions */
 #sessions{
-  width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
-  background-size: cover;
-  background-position: center;
-  color: #efefef !important;
-  background-attachment: fixed;
   text-align: center;
-  padding: 100px;
+  margin: 300px auto;
+}
+#sessions h1{
+  font-size: 55px;
 }
 
 /* application */
@@ -562,7 +562,8 @@ code {
 }
 
 .event-how-to-apply p{
-  font-size: 20px;
+  font-size: 15px;
+  margin: 30px auto;
 }
 
 .event-brief {
@@ -574,7 +575,8 @@ code {
 } 
 
 .event-how-to-apply {
-  line-height: 300%;
+  line-height: 200%;
+  margin: 30px auto;
 }
 
 .event-speakers img{
@@ -597,4 +599,58 @@ code {
 .event-schedule p{
   padding: 15px;
   font-size: 18px;
+}
+
+/* abouticists */
+#about-icists{
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 60px;
+}
+#about-icists h2{
+  margin-bottom: 50px;
+}
+
+/* icistsposter */
+#icists-poster{
+  margin: 80px auto;
+  text-align: center;
+}
+#icists-poster h2{
+  font-size: 40px;
+}
+#icists-poster h2::after{
+  content: '';
+  background: #2c3e50;
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#icists-poster img{
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* cupevent */
+#cup-event{
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#cup-event h1{
+  margin-bottom: 50px;
 }

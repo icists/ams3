@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import topicimg from '../../../assets/img/topicimg.png'
-import poster from '../../../assets/img/poster.png'
 
 export class Icists2019 extends Component {
   render() {
@@ -9,8 +8,6 @@ export class Icists2019 extends Component {
         <div className="row">
           <div className="col-lg-1"></div>
           <div className="col-lg-10">
-          <h2 className="text-uppercase font-weight-bold">About ICISTS 2019</h2>
-            <img src={poster} className="poster" alt=""/>
             <h2 className="text-uppercase font-weight-bold">The Art of Science: Expression</h2>
             <img src={topicimg} alt=""/>
             <p className="text-center">[The Sower, Millet(left), van Gogh(right)]</p>

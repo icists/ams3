@@ -4,7 +4,7 @@ export class Sessions extends Component {
   render() {
     return (
       <div id="sessions">
-        <h1>Session Opening Soon..</h1>
+        <h1>Session Coming Soon..</h1>
       </div>
     )
   }

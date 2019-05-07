@@ -21,8 +21,6 @@ export class ICISTSEvent extends Component<any, any> {
                 <img
                   className="event-cupholder-image"
                   src={CupholderEventImage}
-                  height={cupholderImageHeight * cupholderImageRate}
-                  width={cupholderImageWidth * cupholderImageRate}
                 />
               </div>
               <div className="col-md-6">
