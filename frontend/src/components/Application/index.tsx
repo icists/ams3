@@ -1,5 +1,4 @@
 import React from "react";
-import Select from "react-select";
 
 import { withAuthorization, withEmailVerification } from "../Session";
 import { withFirebase } from "../Firebase";
@@ -18,42 +17,37 @@ import { essayProposition, essayTopic1, essayContent1_1, essayContent1_2,essayTo
  * Template for application form
  */
 const INITIAL_STATE: IApplicationForm = {
-  nameFirst: undefined,
-  nameLast: undefined,
-  sex: undefined,
-  birthDate: undefined,
-  nationality: undefined, 
-  school: undefined,
-  major: undefined,
+  nameFirst: "",
+  nameLast: "",
+  sex: "Male",
+  birthDate: "",
+  nationality: "Korea, Republic of", 
+  school: "",
+  major: "",
 
-  phoneNumber: undefined,
-  notificationEmail: undefined,
+  phoneNumber: "",
+  notificationEmail: "",
 
-  essayTopic: undefined,
-  essay: undefined,
+  essayTopic: "",
+  essay: "",
   essayWordCount: 0,
 
 
   groupState: false,
-  groupName: undefined,
+  groupName: "",
   provisionAgreement: false,
   visaSupport: false,
   financialAid: false,
-  financialAidEssay: undefined,
+  financialAidEssay: "",
   dormUse: false,
   prevParticipation: false,
   
-  channel: undefined,
-  otherChannel: undefined,
+  channel: "Facebook",
+  otherChannel: "",
 
   paymentCheck: false,
 
-  lastUpdate: undefined
-}
-
-const range = (start: number, end: number) => {
-  const length = end - start;
-  return Array.from({ length }, (_, i) => start + i);
+  lastUpdate: ""
 }
 
 class ApplicationBase extends React.Component<
@@ -111,33 +105,38 @@ class ApplicationBase extends React.Component<
   }
   
   private validateSubmitEntry = (entry: IApplicationForm): boolean => {
-    // Must agree with the provision
-    if (entry.provisionAgreement == false)
-      return false;
-
-    // Check if all forms are filled
     let isValid = true;
-    Object.keys(entry).forEach((key) => {
-      if (entry[key] === undefined) {
-        isValid = false;
-        return;
-      }
-      if (typeof entry[key] === 'string') {
-        if (key === 'essay' || key === 'financialAidEssay' || key === 'otherChannel') {
-          isValid = true;
-          return;
+    const keys = Object.keys(entry);
+    for (let i = 0; i < keys.length; i++) {
+      let key = keys[i];
+      console.log(key);
+
+      // Must agree with the provision
+      if (key === 'provisionAgreement') {
+        if (entry[key] === false) {
+          return false;
         }
+      }
+
+      if (key === 'lastUpdate')
+        continue;
+      if (key === 'essay')
+        continue;
+      if (key === 'financialAidEssay')
+        continue;
+      if (key === 'otherChannel')
+        continue;
+      if (key === 'groupName')
+        continue;
+
+      if (typeof (entry[key]) === 'string') {
         if (entry[key].length === 0) {
           isValid = false;
-          return;
-        }
+        }  
       }
-    });
 
-    // Undefined lastUpdate: first submit
-    if (entry.lastUpdate === undefined) {
-      isValid = true;
     }
+
     return isValid;
   }
 
@@ -200,8 +199,8 @@ class ApplicationBase extends React.Component<
   onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // For invalid entry submitted
     if (!this.validateSubmitEntry(this.state)) {
-      event.preventDefault();
       alert("Please fill or select all information");
+      event.preventDefault();
       return;
     }
     const uid = this.props.firebase.auth.currentUser.uid;
