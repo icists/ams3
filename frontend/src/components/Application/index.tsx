@@ -80,9 +80,6 @@ class ApplicationBase extends React.Component<
       )),
       channels: channelOptions.map(element => (
         <option value={element.text}>{element.text}</option>
-      )),
-      ages: range(16, 36 + 1).map(element => (
-        <option value={element}>{element}</option>
       ))
     }
 

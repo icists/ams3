@@ -47,5 +47,4 @@ export interface IApplicationOptions {
     countries: JSX.Element[];
     genders: JSX.Element[];
     channels: JSX.Element[];
-    ages: JSX.Element[];
 }
