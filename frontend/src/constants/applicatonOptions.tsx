@@ -43,6 +43,16 @@ const channelOptions = [
         value: "Poster"
     },
     {
+        key: "Partnership",
+        text: "Partnership",
+        value: "Partnership"
+    },
+    {
+        key: "Collaboration with Club",
+        text: "Collaboration with Club",
+        value: "Collaboration with Club"
+    },
+    {
         key: "Other",
         text: "Other",
         value: "Other"
