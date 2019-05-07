@@ -42,7 +42,7 @@ const INITIAL_STATE: IApplicationForm = {
   dormUse: false,
   prevParticipation: false,
   
-  channel: "Facebook",
+  channel: "----------",
   otherChannel: "",
 
   paymentCheck: false,
@@ -153,7 +153,7 @@ class ApplicationBase extends React.Component<
     this.setState((current) => ({
       ...current,
       [target.name]: target.value,
-      essayWordCount: target.value.trim().split(/\s+/).length,
+      essayWordCount: target.value.trim() === "" ? 0 : target.value.trim().split(/\s+/).length,
     }));
   }
   
@@ -224,7 +224,7 @@ class ApplicationBase extends React.Component<
   render() {
     const timeRemained = () => {
       const now = new Date().getTime();
-      const DDay = new Date("June 2, 2019 23:59:59").getTime();
+      const DDay = new Date("May 31, 2019 23:59:59").getTime();
       const distance = DDay - now;
       const d = Math.floor(distance / (1000 * 60 * 60 * 24));
 
@@ -234,6 +234,19 @@ class ApplicationBase extends React.Component<
     return (
       <div className="application">
       <h1>ICISTS 2019 Application</h1>
+      <div className="row">
+        <div className="col">
+          <textarea
+            disabled={true}
+            className="application-remainders form-control"
+            rows={5}
+            value="1. Please fill all the information in English.
+2. You can save it after filling out all the information.
+3. You can save it without writing 300 words of an essay, but you should write more than 1 word to save.
+4. After the early application is completed, it will be submitted automatically."
+          />
+        </div>
+      </div>
       <div className="form-group">
       <form onSubmit={this.onSubmit}>
         <div className="app-name">
@@ -430,23 +443,6 @@ class ApplicationBase extends React.Component<
                 </div>
             </div>
             <div className="row">
-              <div className="col-md-2">
-                <label htmlFor="app-phone-number-input">Phone Number</label>
-              </div>
-              <div className="col-md-4">
-                <input
-                  className="app-phone-number-input w-100 form-control"
-                  name="phoneNumber"
-                  value={this.state.phoneNumber}
-                  onChange={this.onInputTextChange}
-                  placeholder="Phone Number without '-'"
-                  type="tel"
-                > 
-                </input>
-              </div>
-              <div className="col-md-6" />
-            </div>
-            <div className="row">
               <div className="col">
                 <div className="app-contact-email-invalid-email">
                   {this.validateEmail(this.state.notificationEmail)
@@ -456,6 +452,31 @@ class ApplicationBase extends React.Component<
                   : <div />}
                 </div>
               </div>
+            </div>
+            <hr />
+            <div className="row">
+              <div className="col-md-2">
+                <label htmlFor="app-phone-number-input">Phone Number</label>
+              </div>
+              <div className="col-md-4">
+                <input
+                  className="app-phone-number-input w-100 form-control"
+                  name="phoneNumber"
+                  value={this.state.phoneNumber}
+                  onChange={this.onInputTextChange}
+                  placeholder="+821012345678"
+                  type="tel"
+                > 
+                </input>
+              </div>
+              <div className="col-md-6">
+                  <p className="text-center">
+                    <div className="app-contact-phone-info">
+                      Phone Number without '-'
+                    </div>
+                  </p>
+                </div>
+              <div className="col-md-6" />
             </div>
         </div>
         <hr/>
@@ -765,10 +786,10 @@ class ApplicationBase extends React.Component<
                     <div className="app-alert row alert alert-success">
                       <div className="col-md-14">
                         <p className="text-center">
-                          Your application has been saved properly.
+                          Your applicatoin is saved properly.
                         </p>
                         <p className="text-center">
-                          Early Application ends after {timeRemained()}. Your application will be submitted automatically on June 2.
+                          Early Application ends after {timeRemained()}. Your application will be submitted automatically.
                         </p>
                         <p className="text-center">
                           We will send you email about the conference. Stay tuned with your inbox!
@@ -782,7 +803,7 @@ class ApplicationBase extends React.Component<
             <div className="app-save">
               <div className="app-alert row alert alert-primary">
                 <div className="col-md-14">
-                      {this.state.lastUpdate === undefined
+                      {this.state.lastUpdate === undefined || this.state.lastUpdate === ""
                       ? <p className="text-center">
                           Your application is not saved yet!
                         </p>

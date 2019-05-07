@@ -64,7 +64,7 @@ export class ICISTSEvent extends Component<any, any> {
                   ICISTS는 연설과 팀프로젝트, 스타트업 페스티벌과 과학 예술 전시회, 250여명의 대학생들이 만들어내는 네트워킹의 장을 통해 영감의 기회를 제공합니다.
                 </p>
                 <p>
-                  애플 전 부사장 000, 데니스홍, 노벨물리학상수상자, 이더리움 개발자 000 외 많은 연사님들과 마이크로소프트, 아마존, 삼성 외 여러 기업들의 도움으로 총 14회의 컨퍼런스를 성공리에 마쳤습니다.
+                  애플 전 부사장 Don Norman, 데니스 홍, 노벨물리학상 수상자 Robert B. Laughlin, 이더리움 개발자 Vitalik Buterin 외 많은 연사님들과 마이크로소프트, 아마존, 삼성 외 여러 기업들의 도움으로 총 14회의 컨퍼런스를 성공리에 마쳤습니다.
                 </p>
                 <p>
                   이번 컨퍼런스 주제 및 프로그램 등의 자세한 정보는 다음 링크를 참고해 주세요
@@ -83,6 +83,8 @@ export class ICISTSEvent extends Component<any, any> {
             <p>5월 6일 ~ 5월 31일</p>
             <h4>Regular Application</h4>
             <p>6월 2일 ~ 7월 7일</p>
+            <h4>Late Application</h4>
+            <p>7월 9일 ~ 7월 20일</p>
             <h4>행사 일정</h4>
             <p>7월 29일 ~ 8월 2일</p>
           </div>

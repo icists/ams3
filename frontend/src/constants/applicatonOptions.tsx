@@ -18,6 +18,11 @@ const genderOptions = [
 
 const channelOptions = [
     {
+        key: "----------",
+        text: "----------",
+        value: "----------"
+    },
+    {
         key: "Facebook",
         text: "Facebook",
         value: "Facebook"

@@ -12,7 +12,7 @@ export class AboutIcists extends Component {
             <div className="topic">
             <p>Global conference with 300 participants from 20 countries and 60 universities</p>
             <p>Networking in the fields of science, arts, and humanities</p>
-            <p>five-day festival with world-leading experts and college students</p>
+            <p>Five-day festival with world-leading experts and college students</p>
             </div>
             </div>
             <div className="col-lg-1"></div>
