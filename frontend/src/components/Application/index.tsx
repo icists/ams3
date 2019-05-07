@@ -32,7 +32,6 @@ const INITIAL_STATE: IApplicationForm = {
   essay: "",
   essayWordCount: 0,
 
-
   groupState: false,
   groupName: "",
   provisionAgreement: false,

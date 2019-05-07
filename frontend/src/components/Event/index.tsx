@@ -90,15 +90,6 @@ export class ICISTSEvent extends Component<any, any> {
             <h4>행사 일정</h4>
             <p>7월 29일 ~ 8월 2일</p>
           </div>
-          <div className="event-speakers">
-            <h2> 역대연사 </h2>
-            <img src={DennisHongImage} />
-            <img src={DonaldNormanImage} />
-            <img src={RobertBettsLaugnlinImage} />
-          </div>
-          <div className="event-sponsors">
-            <h2> 스폰서 </h2>
-          </div>
         </div>
       </div>
     )
