@@ -24,11 +24,11 @@ export class Home extends Component {
     <Event />
     <MoreInfo />
     {/* <Sessions /> */}
-    <div className="container text-center" style={{background:"#333", color:"white"}}>
+    {/* <div className="container text-center" style={{background:"#333", color:"white"}}>
       <h2>Contact us for any type of inquiry regarding your application</h2><br />
       <h3>Email: help@icists.org</h3> <br/>
       <h3>Facebook: fb.com/ICISTSKAIST/</h3><br />
-    </div>
+    </div> */}
 </div>
 </div>
 </div>

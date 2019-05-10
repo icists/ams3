@@ -212,11 +212,10 @@ code {
 #footer p{
   margin-bottom: 3px;
 }
-.fa-heart{
-  margin: 3px;
-  color: red;
+#footer .contact-info a{
+  color: white;
+  font-size: 18px;
 }
-
 
 /* icists2019 */
 #icists-2019{
@@ -653,4 +652,5 @@ code {
 }
 #cup-event h1{
   margin-bottom: 50px;
+  font-size: 48px;
 }

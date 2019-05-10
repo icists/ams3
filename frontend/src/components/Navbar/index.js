@@ -61,13 +61,16 @@ const NavigationForAuth = () => (
             <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
         </NavItem>
         <NavItem>
-              <a className="nav-link" href="https://icists.org" target="_blank">About Us</a>
+              <a className="nav-link" href="https://icists.org" target="_blank">More Info</a>
           </NavItem>
         <NavItem>
             <Link className="nav-link" to={ROUTES.APPLICATION}>Application</Link>
         </NavItem>
         <NavItem>
             <Link className="nav-link" to={ROUTES.ACCOUNT}>Account</Link>
+        </NavItem>
+        <NavItem>
+            <a className="nav-link" href="https://www.icists.org/contact-us" target="_blank">Contact</a>
         </NavItem>
         <NavItem>
             <SignOutButton />
@@ -83,8 +86,11 @@ const NavigationForNonAuth = () => (
                 <Link className="nav-link" to={ROUTES.HOME}>Home</Link>
             </NavItem>
             <NavItem>
-            <a className="nav-link" href="https://icists.org" target="_blank">About Us</a>
-          </NavItem>
+              <a className="nav-link" href="https://icists.org" target="_blank">More Info</a>
+            </NavItem>
+            <NavItem>
+              <a className="nav-link" href="https://www.icists.org/contact-us" target="_blank">Contact</a>
+            </NavItem>
             <NavItem>
                 <Link className="nav-link" to={ROUTES.SIGN_IN}>Sign In</Link>
             </NavItem>

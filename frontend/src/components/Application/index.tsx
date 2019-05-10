@@ -235,8 +235,8 @@ class ApplicationBase extends React.Component<
             value="1. Please fill all the information in English.
 2. You can save it after filling out all the information.
 3. You can save it without writing 300 words of an essay, but you should write more than 1 word to save.
-4. After the early application is completed, it will be submitted automatically."
-          />
+4. After the early application is completed, it will be submitted automatically.
+5. Contact us for any type of inquiry regarding your application - Email: help@icists.org"/>
         </div>
       </div>
       <div className="form-group">
