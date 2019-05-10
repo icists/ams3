@@ -641,7 +641,7 @@ code {
 /* cupevent */
 #cup-event{
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
+  /* background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)); */
   background-size: cover;
   background-position: center;
   color: #efefef !important;

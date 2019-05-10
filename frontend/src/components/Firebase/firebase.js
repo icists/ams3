@@ -31,9 +31,9 @@ class Firebase {
         this.auth.currentUser.sendEmailVerification();
     
     onAuthUserListener = (next, fallback) =>
-    this.auth.onAuthStateChanged(authUser => {
+      this.auth.onAuthStateChanged(authUser => {
         if (authUser) {
-        this.user(authUser.uid)
+          this.user(authUser.uid)
             .once('value')
             .then(snapshot => {
             const dbUser = snapshot.val();
