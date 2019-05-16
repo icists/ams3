@@ -590,6 +590,7 @@ class ApplicationBase extends React.Component<
                       Please write a brief essay to show the reason why you are applying for a financial aid.
                     </p>
                     <textarea
+                      name="financialAidEssay"
                       className="app-as-finanical-aid-essay form-control"
                       value={this.state.financialAidEssay}
                       onChange={this.onTextAreaFiEssayChange}
