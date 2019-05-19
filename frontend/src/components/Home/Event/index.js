@@ -8,8 +8,8 @@ export class Event extends Component {
     return (
       <div id="cup-event" className="container">
         <div className="row">
-          <div className="col">
-            <img src={CupHolderEventImage}/>
+          <div className="col-12">
+            <img style={{width:'100%'}} src={CupHolderEventImage}/>
           </div>
         </div>
       </div>
