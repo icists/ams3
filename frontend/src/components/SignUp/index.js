@@ -7,14 +7,16 @@ import * as ROUTES from "../../constants/routes";
 
 const SignUpPage = () => {
     return (
-        <div className="container sign-up">
+        <div className="sign-up">
             <div className="row">
-            <div className="col-sm-12 align-self-center">
+            <div className="col-lg-2"></div>
+            <div className="col-lg-8 align-self-center">
                 <div className="sign-up-head text-uppercase">
                 <h1>Sign Up</h1>
                 </div>
                 <SignUpForm/>
             </div>
+            <div className="col-lg-2"></div>
             </div>
         </div>
     );
