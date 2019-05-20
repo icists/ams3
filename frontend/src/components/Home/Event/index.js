@@ -6,11 +6,13 @@ import cupholderevent from '../../../assets/img/cupholder/cupholder-event-how-to
 export class Event extends Component {
   render() {
     return (
-      <div id="cup-event" className="container">
+      <div id="cup-event">
         <div className="row">
-          <div className="col-12">
+          <div className="col-lg-2"></div>
+          <div className="col-lg-8">
             <img style={{width:'100%'}} src={CupHolderEventImage}/>
           </div>
+          <div className="col-lg-2"></div>
         </div>
       </div>
     )
