@@ -47,7 +47,8 @@ class PasswordChangeForm extends Component {
         </h2>
         <form onSubmit={this.onSubmit}>
           <div className="row">
-            <div className="tbox">
+            <div className="col-lg-4"></div>
+            <div className="col-lg-4 tbox">
               <input
                 name="passwordOne"
                 value={passwordOne}
@@ -56,9 +57,11 @@ class PasswordChangeForm extends Component {
                 placeholder="New Password"
               />
             </div>
+            <div className="col-lg-4"></div>
           </div>
           <div className="row">
-            <div className="tbox">
+            <div className="col-lg-4"></div>
+            <div className="col-lg-4 tbox">
               <input
                 name="passwordTwo"
                 value={passwordTwo}
@@ -67,6 +70,7 @@ class PasswordChangeForm extends Component {
                 placeholder="Confirm Password"
               />
             </div>
+            <div className="col-lg-4"></div>
           </div>
           <div className="row">
             <div className="col-md-4"></div>
