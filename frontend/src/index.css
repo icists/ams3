@@ -24,6 +24,9 @@ code {
 }
 
 /* navbar */
+.main-navbar nav{
+  width: 100%;
+}
 .navbar a{
   color: white;
 }
