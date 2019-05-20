@@ -36,18 +36,24 @@ class Navigation extends Component {
   render() {
     return(
       <div className="main-navbar">
-    <Navbar light className="navbar-expand-lg" expand="md">
-      <Link to={ROUTES.HOME} className="navbar-brand">
-      <img src={logo} alt="icists logo"/>
-      </Link>
-      <NavbarToggler onClick={this.toggle} />
-      <Collapse isOpen={this.state.isOpen} navbar>
-          <AuthUserContext.Consumer>
-            {authUser =>
-              authUser ? <NavigationForAuth /> : <NavigationForNonAuth /> }
-          </AuthUserContext.Consumer>
-      </Collapse>
-    </Navbar>
+        <div className="row">
+        <div className="col-lg-2"></div>
+        <div className="col-lg-8">
+        <Navbar light className="navbar-expand-lg" expand="md">
+          <Link to={ROUTES.HOME} className="navbar-brand">
+          <img src={logo} alt="icists logo"/>
+          </Link>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+              <AuthUserContext.Consumer>
+                {authUser =>
+                  authUser ? <NavigationForAuth /> : <NavigationForNonAuth /> }
+              </AuthUserContext.Consumer>
+          </Collapse>
+        </Navbar>
+        </div>
+        <div className="col-lg-2"></div>
+        </div>
       </div>
 
     )

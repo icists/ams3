@@ -14,8 +14,6 @@ export class Home extends Component {
   render() {
     return (
 <div className="home">
-<div className="row">
-<div className="col-12 home-content">
     <Promo />
     <AboutKaist />
     <AboutIcists />
@@ -29,8 +27,6 @@ export class Home extends Component {
       <h3>Email: help@icists.org</h3> <br/>
       <h3>Facebook: fb.com/ICISTSKAIST/</h3><br />
     </div> */}
-</div>
-</div>
 </div>
     )
   }

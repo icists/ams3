@@ -18,7 +18,7 @@ import { withAuthentication } from "../Session"
 const App = () => (
         <HashRouter>
             <div>
-                <div className="container">
+                <div className="container-fluid pl-0 pr-0">
                 <Navbar />
                 <Switch>
                     <Route exact path={ROUTES.HOME} component={Home} />
