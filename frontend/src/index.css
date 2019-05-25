@@ -24,6 +24,9 @@ code {
 }
 
 /* navbar */
+.main-navbar nav{
+  width: 100%;
+}
 .navbar a{
   color: white;
 }
@@ -163,8 +166,8 @@ code {
   color: #fff;
   background-attachment: fixed;
   text-align: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 300px;
+  padding-bottom: 300px;
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 55px;
 }
@@ -640,15 +643,12 @@ code {
 /* cupevent */
 #cup-event{
   width: 100%;
-  /* background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)); */
+  /* background : rgb(161,216,247); */
   background-size: cover;
   background-position: center;
   color: #efefef !important;
   background-attachment: fixed;
   text-align: center;
-  padding: 60px;
-  padding-top: 50px;
-  padding-bottom: 50px;
 }
 #cup-event h1{
   margin-bottom: 50px;
