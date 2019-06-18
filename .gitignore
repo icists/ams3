@@ -1,3 +1,4 @@
+.vscode
 ams3-venv
 frontend/node_modules
 frontend/.env
