@@ -781,7 +781,7 @@ class ApplicationBase extends React.Component<
                         <div className="app-alert row alert alert-success">
                           <div className="col-md-14">
                             <p className="text-center">
-                              Your applicatoin is saved properly.
+                              Your application is saved properly.
                             </p>
                             <p className="text-center">
                               Early Application ends after {timeRemained()}. Your application will be submitted automatically.
