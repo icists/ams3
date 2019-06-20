@@ -12,6 +12,7 @@ import { IApplicationForm, IApplicationState, IApplicationOptions } from "./inte
 
 import { provision } from "../../constants/provision";
 import { essayProposition, essayTopic1, essayContent1_1, essayContent1_2,essayTopic2, essayContent2_1, essayContent2_2  } from '../../constants/essayTopic';
+import { database } from 'firebase';
 
 /**
  * Template for application form
@@ -202,6 +203,7 @@ class ApplicationBase extends React.Component<
       return;
     }
     const uid = this.props.firebase.auth.currentUser.uid;
+    const date = new Date();
     // You have to sanitize undefined data!
     this.props.firebase.userApplication(uid).set({
       ...this.state,
@@ -210,14 +212,14 @@ class ApplicationBase extends React.Component<
       groupName: this.state.groupName === undefined ? "" : this.state.groupName,
       otherChannel: this.state.otherChannel === undefined ? "" : this.state.otherChannel,
       financialAidEssay: this.state.financialAidEssay === undefined ? "" : this.state.financialAidEssay,
-      lastUpdate: (new Date()).toTimeString(),
+      lastUpdate: date.toString(),
     });
   }
 
   render() {
     const timeRemained = () => {
       const now = new Date().getTime();
-      const DDay = new Date("May 31, 2019 23:59:59").getTime();
+      const DDay = new Date("July 7, 2019 23:59:59").getTime();
       const distance = DDay - now;
       const d = Math.floor(distance / (1000 * 60 * 60 * 24));
 
@@ -798,17 +800,17 @@ class ApplicationBase extends React.Component<
                 <div className="app-save">
                   <div className="app-alert row alert alert-primary">
                     <div className="col-md-14">
-                          {this.state.lastUpdate === undefined || this.state.lastUpdate === ""
-                          ? <p className="text-center">
-                              Your application is not saved yet!
-                            </p>
-                          : <p className="text=center">
-                              Your application is saved at {this.state.lastUpdate}
-                            </p>
-                          }
-                        <button type="submit" className="btn btn-primary w-100">
-                          Save
-                        </button>
+                      {this.state.lastUpdate === undefined || this.state.lastUpdate === ""
+                      ? <p className="text-center">
+                          Your application is not saved yet!
+                        </p>
+                      : <p className="text=center">
+                          Your application is saved at {this.state.lastUpdate}
+                        </p>
+                      }
+                      <button type="submit" className="btn btn-primary w-100">
+                        Save
+                      </button>
                     </div>
                   </div>
                 </div>
