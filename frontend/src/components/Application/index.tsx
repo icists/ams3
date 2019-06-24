@@ -12,7 +12,6 @@ import { IApplicationForm, IApplicationState, IApplicationOptions } from "./inte
 
 import { provision } from "../../constants/provision";
 import { essayProposition, essayTopic1, essayContent1_1, essayContent1_2,essayTopic2, essayContent2_1, essayContent2_2  } from '../../constants/essayTopic';
-import { database } from 'firebase';
 
 /**
  * Template for application form
@@ -28,6 +27,7 @@ const INITIAL_STATE: IApplicationForm = {
 
   phoneNumber: "",
   notificationEmail: "",
+  recommender: "",
 
   essayTopic: "",
   essay: "",
@@ -509,26 +509,6 @@ class ApplicationBase extends React.Component<
               <hr/>
               <div>
                 <h3>Please check the entries that applies to you.</h3>
-                {/* <div className="row">
-                  <div className="col-md-1">
-                    <div className="app-dorm-use-check">
-                      <input
-                        name="dormUse"
-                        className="app-dorm-use-check form-control"
-                        type="checkbox"
-                        onChange={this.onInputCheckboxChange}
-                        checked={this.state.dormUse}
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-11">
-                    <label className="app-financial-aid-check-label" htmlFor="app-provision-check">
-                      Check if you are applying for using dormitory at KAIST during the conference<br /> 
-                      (You will have to pay extra accommodation fee if you apply dormitory stay at KAIST.)
-                    </label>
-                  </div>
-                </div> */}
-                {/* <hr /> */}
                 <div className="row">  
                   <div className="col-md-1">
                     <div className="app-prev-participation">
@@ -775,7 +755,24 @@ class ApplicationBase extends React.Component<
                         placeholder="How did you know about ICISTS?"
                       />
                     </div>
-                  : <div/>}
+                  : null}
+              </div>
+              <div className="app-recommender">
+                <div className="row">
+                  <div className="col-md-8">
+                    Please write your recommender's name
+                  </div>
+                  <div className="col-md-4">
+                      <input
+                        className="app-recommender-name form-control"
+                        name="recommender"
+                        value={this.state.recommender}
+                        onChange={this.onInputTextChange}
+                        type="text"
+                        placeholder="Recommender's Name"
+                      />
+                  </div>
+                </div>
               </div>
                 {this.state.lastUpdate.length !== 0 
                   ? <div className="row">
@@ -795,7 +792,7 @@ class ApplicationBase extends React.Component<
                         </div>
                       </div>
                     </div>
-                  : <div/>}
+                  : null}
               <div className="row">
                 <div className="app-save">
                   <div className="app-alert row alert alert-primary">

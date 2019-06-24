@@ -12,6 +12,7 @@ export interface IApplicationForm {
   // Contact
   phoneNumber: string;
   notificationEmail: string;
+  recommender: string;
 
   essayTopic: string;
   essay: string;
