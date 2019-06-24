@@ -509,7 +509,7 @@ class ApplicationBase extends React.Component<
               <hr/>
               <div>
                 <h3>Please check the entries that applies to you.</h3>
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-md-1">
                     <div className="app-dorm-use-check">
                       <input
@@ -527,8 +527,8 @@ class ApplicationBase extends React.Component<
                       (You will have to pay extra accommodation fee if you apply dormitory stay at KAIST.)
                     </label>
                   </div>
-                </div>
-                <hr />
+                </div> */}
+                {/* <hr /> */}
                 <div className="row">  
                   <div className="col-md-1">
                     <div className="app-prev-participation">
@@ -783,7 +783,7 @@ class ApplicationBase extends React.Component<
                         <div className="app-alert row alert alert-success">
                           <div className="col-md-14">
                             <p className="text-center">
-                              Your applicatoin is saved properly.
+                              Your application is saved properly.
                             </p>
                             <p className="text-center">
                               Regular Application ends after {timeRemained()}. Your application will be submitted automatically.
