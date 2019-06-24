@@ -127,6 +127,8 @@ class ApplicationBase extends React.Component<
         continue;
       if (key === 'groupName')
         continue;
+      if (key == 'recommender')
+        continue;
 
       if (typeof (entry[key]) === 'string') {
         if (entry[key].length === 0) {
