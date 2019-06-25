@@ -13,6 +13,7 @@ export interface IApplicationForm {
   phoneNumber: string;
   notificationEmail: string;
   recommender: string;
+  recommenderMail: string;
 
   essayTopic: string;
   essay: string;

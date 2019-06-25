@@ -28,6 +28,7 @@ const INITIAL_STATE: IApplicationForm = {
   phoneNumber: "",
   notificationEmail: "",
   recommender: "",
+  recommenderMail: "",
 
   essayTopic: "",
   essay: "",
@@ -127,7 +128,9 @@ class ApplicationBase extends React.Component<
         continue;
       if (key === 'groupName')
         continue;
-      if (key == 'recommender')
+      if (key === 'recommender')
+        continue;
+      if (key === 'recommenderMail')
         continue;
 
       if (typeof (entry[key]) === 'string') {
@@ -761,10 +764,10 @@ class ApplicationBase extends React.Component<
               </div>
               <div className="app-recommender">
                 <div className="row">
-                  <div className="col-md-8">
-                    Please write your recommender's name
+                  <div className="col-md-5">
+                    Please write your recommender's name and email
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-md-3">
                       <input
                         className="app-recommender-name form-control"
                         name="recommender"
@@ -772,6 +775,16 @@ class ApplicationBase extends React.Component<
                         onChange={this.onInputTextChange}
                         type="text"
                         placeholder="Recommender's Name"
+                      />
+                  </div>
+                  <div className="col-md-4">
+                      <input
+                        className="app-recommender-mail form-control"
+                        name="recommenderMail"
+                        value={this.state.recommenderMail}
+                        onChange={this.onInputTextChange}
+                        type="text"
+                        placeholder="Recommender's EMail"
                       />
                   </div>
                 </div>
