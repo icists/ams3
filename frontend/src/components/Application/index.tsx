@@ -5,7 +5,7 @@ import { withFirebase } from "../Firebase";
 
 import { compose } from "recompose";
 
-import { genderOptions, channelOptions, schoolOptions } from "../../constants/applicatonOptions";
+import { genderOptions, channelOptions } from "../../constants/applicatonOptions";
 import countryList from 'react-select-country-list';
 
 import { IApplicationForm, IApplicationState, IApplicationOptions } from "./interface";
